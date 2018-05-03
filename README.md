@@ -3,7 +3,7 @@
 
 [![Build Status](https://travis-ci.com/turboext/css.svg?branch=master)](https://travis-ci.com/turboext/css)
 
-# Отладка
+# Прототипирование стилей
 1. Установить расширенение [live editor for CSS](https://webextensions.org/) (или любое другое с похожими возможностями);
 2. Зайти в браузере на турбо-страницу;
 3. Написать CSS для нужных компонентов.
