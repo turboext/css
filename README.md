@@ -47,4 +47,4 @@
 1. Связать PR и issue (например, c помощью комментария).
 
 # Поддержка разработчиков
-https://turbosupport.slack.com, доступ по приглашениям.
+https://turbosupport.slack.com, доступ по [приглашениям](https://yandex.ru/turbo?text=turbosupport-slack-access).
