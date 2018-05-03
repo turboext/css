@@ -1,7 +1,7 @@
 # TurboExtensions
 Расширенные возможности стилизации средствами CSS.
 
-[![Build Status](https://travis-ci.org/sbmaxx/tmpcss.svg?branch=master)](https://travis-ci.org/sbmaxx/tmpcss)
+[![Build Status](https://travis-ci.com/turboext/css.svg?branch=master)](https://travis-ci.com/turboext/css)
 
 # Отладка
 1. Установить расширенение [live editor for CSS](https://webextensions.org/) (или любое другое с похожими возможностями);
