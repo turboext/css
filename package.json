@@ -1,5 +1,5 @@
 {
-  "name": "tmpcss",
+  "name": "css",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -15,14 +15,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sbmaxx/tmpcss.git"
+    "url": "git+https://github.com/turboext/css.git"
   },
   "author": "sbmaxx",
   "license": "MPL-2.0",
   "bugs": {
-    "url": "https://github.com/sbmaxx/tmpcss/issues"
+    "url": "https://github.com/turboext/css/issues"
   },
-  "homepage": "https://github.com/sbmaxx/tmpcss#readme",
+  "homepage": "https://github.com/turboext/css#readme",
   "dependencies": {
     "autoprefixer": "8.3.0",
     "chalk": "^2.4.1",
