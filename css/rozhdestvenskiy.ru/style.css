@@ -1,3 +1,12 @@
 .cover__title {
-    background: green;
+    font-weight: normal;
+}
+
+.page__cover + .page__markup {
+    margin-top: 10px;
+}
+
+.page .page__source,
+.page__unit + .page__footer {
+    margin-top: 20px;
 }
