@@ -10,7 +10,7 @@
     "minify": "node ./cli/minifier.js",
     "gzip": "node ./cli/gzip.js",
     "size-lint": "node ./cli/size-lint.js",
-    "host-lint": "node ./cli/host-css-count-lint.js && node ./cli/host-json-lint",
+    "host-lint": "node ./cli/host-css-count-lint.js && node ./cli/host-yaml-lint",
     "clean": "find css -name '*.min.css' -o -name '*.css.gz' | xargs rm"
   },
   "repository": {
@@ -29,6 +29,7 @@
     "cssnano": "3.10.0",
     "fs-extra": "5.0.0",
     "glob": "7.1.2",
+    "js-yaml": "^3.11.0",
     "postcss-cli": "5.0.0",
     "postcss-import": "11.1.0",
     "postcss-nested": "3.0.0",
