@@ -6,7 +6,27 @@
     margin-top: 10px;
 }
 
-.page .page__source,
 .page__unit + .page__footer {
     margin-top: 20px;
+}
+
+.page__source {
+    display: none;
+}
+
+.footer {
+    background: #fafafa;
+}
+
+.footer__about {
+    padding-top: 16px;
+    padding-bottom: 16px;
+}
+
+.footer_theme_dark .footer__link.link {
+    color: #777;
+}
+
+.footer_view_default {
+    padding-bottom: 0;
 }
