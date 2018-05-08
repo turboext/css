@@ -31,7 +31,6 @@
 
 # Внесение изменений в стили
 1. Сделать fork репозитория;
-1. Создать branch в формате `example.com/comment`;
 1. Создать директорию `css/example.com`;
 1. В директории должно быть несколько обязательных файлов — `HOSTS.yaml, OWNERS.yaml, style.css`. 
     * `HOSTS.yaml` должен содержать список доменов для которых должны применяться текущие стили, например:
@@ -39,7 +38,8 @@
         - https://www.rozhdestvenskiy.ru
         - https://rozhdestvenskiy.ru
         ```
-    Протокол (http, https) обязателен
+    Протокол (http, https) обязателен. Фактически, это адрес сайта из https://webmaster.yandex.ru
+    ![webmaster](webmaster-host.png)
     * `OWNERS.yaml` должен содержать список логинов на https://github.com кому разрешено править стили для текущего домена, например:
     ```yaml
     - sbmaxx
