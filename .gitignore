@@ -2,8 +2,8 @@
 .history
 
 node_modules
-css/**/*.min.css
-css/**/*.gz
-!css/**/hosts.json
-!css/**/style.css
-!css/**/OWNERS.yaml
+hosts/**/*.min.css
+hosts/**/*.gz
+!hosts/**/hosts.json
+!hosts/**/style.css
+!hosts/**/OWNERS.yaml

@@ -6,7 +6,7 @@ const yaml = require('js-yaml');
 
 const uniqueHosts = new Map();
 
-for (const { host, files } of hostFiles('./css/*/', 'HOSTS.yaml')) {
+for (const { host, files } of hostFiles('./hosts/*/', 'HOSTS.yaml')) {
     console.assert(
         files.length === 1,
         chalk.red.bold(`Should be only one HOSTS.yaml file in ${host} directory`),

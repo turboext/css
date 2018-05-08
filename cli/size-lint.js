@@ -14,11 +14,11 @@ function toKBStr(bytes, precision) {
 }
 
 async function run() {
-    await gzip('css/**/*.min.css');
-    const fileSizes = await size('css/**/*.gz');
+    await gzip('hosts/**/*.min.css');
+    const fileSizes = await size('hosts/**/*.gz');
 
-    await clean('css/**/*.min.css');
-    await clean('css/**/*.gz');
+    await clean('hosts/**/*.min.css');
+    await clean('hosts/**/*.gz');
 
     const bigFiles = fileSizes.filter(file => file.size > BYTES);
 

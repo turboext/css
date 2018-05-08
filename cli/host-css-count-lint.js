@@ -2,7 +2,7 @@ const chalk = require('chalk');
 const { basename } = require('path');
 const hostFiles = require('../lib/host-files.js');
 
-for (const { host, files } of hostFiles('./css/*/', '*.css')) {
+for (const { host, files } of hostFiles('./hosts/*/', '*.css')) {
     console.assert(
         files.length === 1,
         chalk.red.bold(`Should be only one CSS file in ${host} directory`),
