@@ -1,4 +1,5 @@
 const postcss = require('../lib/postcss');
+const glob = require('glob');
 const fs = require('fs');
 const files = glob.sync('./hosts/**/*.css');
 
