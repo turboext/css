@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <title>Яндекс</title>
+    <link rel="shortcut icon" href="//yastatic.net/iconostasis/_/8lFaTHLDzmsEZz-5XaQg9iTWZGE.png">
+    <meta http-equiv=Content-Type content="text/html;charset=UTF-8">
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            line-height: 46px;
+            font-size: 19px;
+            font-family: arial,sans-serif;
+            color: #000;
+            vertical-align: top;
+        }
+        .input {
+            line-height: 46px;
+            font-size: 19px;
+            position: relative;
+            font-family: arial,sans-serif;
+            color: #000;
+            vertical-align: top;
+            display: inline-block;
+            width: 100%;
+        }
+        .input:before {
+            border-width: 3px 0 3px 3px;
+            border-style: solid;
+            border-color: #ffdb4d;
+            background-color: #fff;
+            background-clip: padding-box;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            content: '';
+        }
+        .input__box {
+            height: 46px;
+            display: block;
+            cursor: text;
+            position: relative;
+            box-sizing: border-box;
+        }
+        .input__control {
+            display: block;
+            border-right-width: 40px;
+            height: 46px;
+            z-index: 3;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            padding-left: 15px;
+            font-size: 100%;
+            color: #000;
+            border: 0 solid transparent;
+            outline: 0;
+            background: 0 0;
+            -webkit-tap-highlight-color: rgba(0,0,0,0);
+            -webkit-appearance: none;
+            position: relative;
+            box-sizing: border-box;
+        }
+        .form {
+            width: 80%;
+            max-width: 800px;
+            margin-left: 15px;
+            display: inline-table;
+            border-collapse: collapse;
+        }
+        .form__button, .form__input {
+            display: table-cell;
+        }
+        .form__input {
+            vertical-align: top;
+        }
+        .form__input {
+            width: 100%;
+        }
+        .button {
+            overflow: hidden;
+            font-family: Arial,sans-serif;
+            display: block;
+            border-radius: 0;
+            position: relative;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -moz-user-focus: ignore;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            white-space: nowrap;
+            text-decoration: none;
+            border: 0;
+            outline: 0;
+            background: 0 0;
+            touch-action: manipulation;
+        }
+        .button__text {
+            width: 95px;
+            height: 46px;
+            font: 19px/40px arial,sans-serif;
+            padding: 0 17px 0 23px;
+            margin: 0 13px 0 0;
+            box-sizing: border-box;
+            color: #000;
+            border: 0 solid #ffdb4d;
+            border-width: 3px 0;
+            background-color: #ffdb4d;
+            -webkit-transition: .1s ease-out;
+            transition: .1s ease-out;
+            -webkit-transition-property: border-color,background;
+            transition-property: border-color,background;
+            position: relative;
+            display: inline-block;
+            resize: none;
+            pointer-events: none;
+        }
+        .button__text:before {
+            border-width: 28px 0 28px 14px;
+            right: -12px;
+            top: -8px;
+            position: absolute;
+            width: 0;
+            height: 0;
+            content: '';
+            border-style: solid;
+            border-color: rgba(255,219,76,0);
+            border-left-color: inherit;
+        }
+        .suggest {
+            width: 80%;
+            max-width: 800px;
+            margin-left: 15px;
+            text-align: left;
+        }
+        .suggest__link {
+            color: #0054b9;
+            text-decoration: none;
+            border-bottom: 1px dashed #0054b9;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <form class="form" action="/turbo" >
+        <div class="form__input"><span class="input">
+                <span class="input__box">
+                    <input class="input__control input__input" tabindex="2" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" maxlength="400" name="text" placeholder="адрес турбо-страницы">
+                </span>
+            </span>
+        </div>
+        <div class="form__button"><button class="button"  tabindex="-1" role="button" type="submit"><span class="button__text">Турбо</span></button></div>
+    </form>
+    <div class="suggest">
+        <div class="suggest__item">Например, <a class="suggest__link" href="/turbo?text=https://rozhdestvenskiy.ru/">https://rozhdestvenskiy.ru</a></div>
+    </div>
+</html>
