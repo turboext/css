@@ -20,6 +20,7 @@ cd css
 yarn # или npm install
 nvm use # если у вас установлен nvm
 npm start
+npm test # для локального запуска тестов
 ```
 
 Использование:
