@@ -4,6 +4,7 @@ const rp = require('request-promise');
 const cheerio = require('cheerio')
 const glob = require('glob');
 const path = require('path');
+const qs = require('querystring');
 const yaml = require('js-yaml');
 const { URL } = require('url');
 const chalk = require('chalk');
@@ -70,12 +71,25 @@ function normalize(str) {
     }
 }
 
-function getTurbo(req, query) {
+function cleanupParams(queryParams) {
+    if (!queryParams) {
+        return {};
+    }
+
+    const params = { ...queryParams };
+    delete params.text;
+
+    return params;
+}
+
+function getTurbo(req, query, params) {
     const headers = { ...req.headers };
     delete headers.host;
 
+    const paramsString = qs.stringify(params);
+
     return rp({
-        uri: query ? `https://yandex.ru/turbo?text=${query}` : `https://yandex.ru/turbo`,
+        uri: query ? `https://yandex.ru/turbo?text=${query}${paramsString ? `&${paramsString}` : '' }` : `https://yandex.ru/turbo`,
         headers,
         gzip: true
     });
@@ -84,14 +98,17 @@ function getTurbo(req, query) {
 app.get('/turbo', (req, res, next) => {
     const query = normalize(req.query.text);
     const hostname = getHostname(query);
+    const params = cleanupParams(req.query);
 
     if (!hostname) {
-        return getTurbo(req, query).then(html => res.send(html)).catch(e => next(e));
+        return getTurbo(req, query, params).then(html => res.send(html)).catch(e => next(e));
     }
 
-    Promise.all([getTurbo(req, query), getHostCSS(hostname)]).then(([html, style]) => {
-        res.status(200);
+    if (params.ajax_type) {
+        return getTurbo(req, query, params).then(html => res.send(html)).catch(e => next(e));
+    }
 
+    Promise.all([getTurbo(req, query, params), getHostCSS(hostname)]).then(([html, style]) => {
         const $ = cheerio.load(html);
 
         $('meta[http-equiv=Content-Security-Policy]').remove();
