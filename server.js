@@ -66,19 +66,6 @@ function getTurbo(req, url, params) {
     });
 }
 
-app.use(express.static('public'));
-
-app.use((req, res, next) => {
-    const url = normalize(req.query.text);
-
-    req.ctx = {
-        url,
-        hostname: getHostname(url)
-    };
-
-    next();
-});
-
 if (process.env.NODE_ENV !== 'development') {
     app.use((req, res, next) => {
         const match = req.hostname.match(/^(.+)\.turboext\.net$/);
@@ -95,6 +82,19 @@ if (process.env.NODE_ENV !== 'development') {
         next();
     });
 }
+
+app.use(express.static('public'));
+
+app.use((req, res, next) => {
+    const url = normalize(req.query.text);
+
+    req.ctx = {
+        url,
+        hostname: getHostname(url)
+    };
+
+    next();
+});
 
 app.get('/turbo', (req, res, next) => {
     const {
@@ -133,5 +133,5 @@ app.use((err, req, res) => {
 });
 
 app.listen(3000, () => {
-    console.log(`DevServer started at ${chalk.blue.underline('http://localhost:3000')}`);
+    console.log(`DevServer started at ${chalk.blue.underline('http://localhost:3000')}. [${process.env.NODE_ENV}]`);
 });
