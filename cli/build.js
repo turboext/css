@@ -4,12 +4,7 @@ const { basename, join } = require('path');
 const postcss = require('../lib/postcss');
 const hostFiles = require('../lib/host-files.js');
 
-if (process.argv.length !== 3) {
-    console.log('You should specify pull-request, for example: "pull/7"');
-    process.exit(1);
-}
-
-const pullRequestDir = join('checkout', process.argv[2].replace('/', '-'));
+const pullRequestDir = process.argv[2] ? join('checkout', process.argv[2].replace('/', '')) : '.';
 
 (async () => {
     const css = {};
@@ -34,5 +29,6 @@ const pullRequestDir = join('checkout', process.argv[2].replace('/', '-'));
         console.log(`Build was saved to ${output}`);
     } catch(e) {
         console.error(e);
+        process.exit(1);
     }
 })();
