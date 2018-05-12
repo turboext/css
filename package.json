@@ -6,13 +6,14 @@
   "main": "index.js",
   "scripts": {
     "start": "NODE_ENV=development node server.js",
-    "test": "eslint . && npm run lint && npm run size-lint && npm run host-lint",
+    "test": "eslint . && npm run lint && npm run size-lint && npm run host-lint && npm run build",
     "lint": "npm run stylelint",
     "stylelint": "stylelint css/**/*.css",
     "minify": "node ./cli/minifier.js",
     "gzip": "node ./cli/gzip.js",
     "size-lint": "node ./cli/size-lint.js",
-    "host-lint": "node ./cli/host-css-count-lint.js && node ./cli/host-yaml-lint",
+    "build": "node ./cli/build.js",
+    "host-lint": "node ./cli/host-css-count-lint.js && node ./cli/host-yaml-lint.js",
     "clean": "find css -name '*.min.css' -o -name '*.css.gz' | xargs rm"
   },
   "repository": {
