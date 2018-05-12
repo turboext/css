@@ -1,5 +1,6 @@
 .idea
 .history
+.vscode
 
 checkout
 node_modules
@@ -8,3 +9,5 @@ hosts/**/*.gz
 !hosts/**/hosts.json
 !hosts/**/style.css
 !hosts/**/OWNERS.yaml
+checkout
+build.json

@@ -1,0 +1,15 @@
+{
+  "name": "turbo-dev",
+  "script": "server.js",
+  "log_date_format": "YYYY-MM-DD HH:mm Z",
+  "instances": 1,
+  "min_uptime": "1000s",
+  "cron_restart": "0 */2 * * *",
+  "watch": false,
+  "merge_logs": true,
+  "exec_mode": "cluster",
+  "env": {
+    "NODE_ENV": "production",
+    "NODE_PORT": 3333
+  }
+}
