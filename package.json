@@ -1,7 +1,7 @@
 {
   "name": "css",
   "version": "1.0.0",
-  "description": "turbo extensions",
+  "description": "Turbo extensions",
   "private": "true",
   "main": "index.js",
   "scripts": {
