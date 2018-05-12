@@ -77,6 +77,7 @@ if (process.env.NODE_ENV !== 'development') {
             return res.redirect('https://master.turboext.net');
         }
 
+        req.ctx = req.ctx || {};
         req.ctx.pullRequest = pullRequest;
 
         next();
@@ -88,10 +89,9 @@ app.use(express.static('public'));
 app.use((req, res, next) => {
     const url = normalize(req.query.text);
 
-    req.ctx = {
-        url,
-        hostname: getHostname(url)
-    };
+    req.ctx = req.ctx || {};
+    req.ctx.url = url;
+    req.ctx.hostname = getHostname(url);
 
     next();
 });
