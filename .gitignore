@@ -1,6 +1,7 @@
 .idea
 .history
 
+checkout
 node_modules
 hosts/**/*.min.css
 hosts/**/*.gz
