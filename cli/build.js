@@ -4,7 +4,7 @@ const { basename, join } = require('path');
 const postcss = require('../lib/postcss');
 const hostFiles = require('../lib/host-files.js');
 
-const pullRequestDir = process.argv[2] ? join('checkout', process.argv[2]) : '.';
+const pullRequestDir = process.argv[2] ? join('checkout', process.argv[2].replace('/', '-')) : '.';
 
 (async () => {
     const css = {};
