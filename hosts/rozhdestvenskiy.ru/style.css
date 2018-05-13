@@ -1,4 +1,3 @@
-/ * test */
 .cover__title {
     font-weight: normal;
 }
@@ -31,4 +30,7 @@
 
 .footer_view_default {
     padding-bottom: 0;
+}
+.page {
+    background: red;
 }
