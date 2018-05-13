@@ -2,7 +2,7 @@
   "name": "turbo-dev",
   "script": "server.js",
   "log_date_format": "YYYY-MM-DD HH:mm Z",
-  "instances": 1,
+  "instances": 0,
   "min_uptime": "1000s",
   "cron_restart": "0 */2 * * *",
   "watch": false,
