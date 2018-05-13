@@ -1,4 +1,4 @@
-# TurboExtensions
+# TurboExtensions ;)
 Расширенные возможности стилизации средствами CSS.
 
 [![Build Status](https://travis-ci.com/turboext/css.svg?branch=master)](https://travis-ci.com/turboext/css)
