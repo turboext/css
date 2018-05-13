@@ -1,4 +1,4 @@
-# TurboExtensions
+# TurboExtensions ;) :)
 Расширенные возможности стилизации средствами CSS.
 
 [![Build Status](https://travis-ci.com/turboext/css.svg?branch=master)](https://travis-ci.com/turboext/css)
@@ -77,3 +77,6 @@ npm test # для локального запуска тестов
 
 # Поддержка разработчиков
 https://turbosupport.slack.com, доступ по [приглашениям](https://yandex.ru/turbo?text=turbosupport-slack-access).
+OK
+OK
+OK
