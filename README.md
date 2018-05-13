@@ -77,3 +77,4 @@ npm test # для локального запуска тестов
 # Поддержка разработчиков
 https://turbosupport.slack.com, доступ по [приглашениям](https://yandex.ru/turbo?text=turbosupport-slack-access).
 OK
+OK
