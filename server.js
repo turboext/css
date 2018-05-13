@@ -1,12 +1,12 @@
 const express = require('express');
 const app = module.exports = express();
 const rp = require('request-promise');
-const cheerio = require('cheerio');
 const { URL } = require('url');
 const chalk = require('chalk');
 const fs = require('fs');
 const path = require('path');
 const qs = require('querystring');
+const compression = require('compression');
 
 const getHostCSS = require('./lib/server/get-host-css');
 
@@ -86,6 +86,8 @@ if (process.env.NODE_ENV !== 'development') {
 
 app.use(express.static('public'));
 
+app.use(compression());
+
 app.use((req, res, next) => {
     const url = normalize(req.query.text);
 
@@ -112,13 +114,17 @@ app.get('/turbo', (req, res, next) => {
         return getTurbo(req, url, params).then(html => res.send(html)).catch(e => next(e));
     }
 
-    Promise.all([getTurbo(req, url, params), getHostCSS(req, hostname)]).then(([html, style]) => {
-        const $ = cheerio.load(html);
+    Promise.all([getTurbo(req, url, params), getHostCSS(req, hostname)]).then(([rawHtml, style]) => {
+        const meta = /<meta http-equiv=Content-Security-Policy content="[^"]+">/;
+        const html = rawHtml.replace(meta, '');
+        
+        const search = '</style>';
+        const index = html.lastIndexOf(search) + search.length;
+        
+        const before = html.substr(0, index);
+        const after = html.substr(index);
 
-        $('meta[http-equiv=Content-Security-Policy]').remove();
-        $(`<style>${style}</style>`).insertAfter($('style').last());
-
-        res.send($.html());
+        res.send(before + `<style data-name="custom-style">${style}</style>` + after);
     }).catch(e => next(e));
 });
 
