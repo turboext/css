@@ -4,15 +4,17 @@ const { basename, join } = require('path');
 const postcss = require('../lib/postcss');
 const hostFiles = require('../lib/host-files.js');
 
-const pullRequestDir = process.argv[2] ? join('checkout', process.argv[2].replace('/', '')) : '.';
+const pullRequestDir = process.argv[2] ? join('checkout', process.argv[2]) : '.';
 
 (async () => {
     const css = {};
     const hosts = {};
-    console.log(`${pullRequestDir}/hosts/*/`);
 
     try {
-        console.assert(fs.existsSync(pullRequestDir), 'Pull request directory should exists.');
+        if (!fs.existsSync(pullRequestDir)) {
+            console.error(`Pull request directory "${pullRequestDir}" doesn't exists.`);
+            process.exit(1);
+        }
 
         for (const { host: dir } of hostFiles(`${pullRequestDir}/hosts/*/`)) {
             console.log(`Processing ${dir}`);
