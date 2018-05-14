@@ -5,7 +5,7 @@ module.exports = {
     ],
     rules: {
         'plugin/no-low-performance-animation-properties': true,
-        'unit-whitelist': ['px', '%', 'rem', 's', 'ms'],
+        'unit-whitelist': ['px', '%', 'rem', 's', 'ms', 'deg', 'vw', 'vh'],
         'selector-max-specificity': '0,3,0',
         'selector-max-type': 0,
         'at-rule-blacklist': ['font-face', 'import'],
@@ -16,8 +16,10 @@ module.exports = {
             'mask',
             'mask-image',
             'mask-border',
-            'clip-path',
-            'content'
-        ]
+            'clip-path'
+        ],
+        'declaration-property-value-whitelist': {
+            'content': ['\'\'']
+        }
     }
 };
