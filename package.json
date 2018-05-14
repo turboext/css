@@ -8,7 +8,7 @@
     "start": "NODE_ENV=development node server.js",
     "test": "eslint . && npm run lint && npm run size-lint && npm run host-lint && npm run build",
     "lint": "npm run stylelint",
-    "stylelint": "stylelint css/**/*.css",
+    "stylelint": "stylelint hosts/**/*.css",
     "minify": "node ./cli/minifier.js",
     "gzip": "node ./cli/gzip.js",
     "size-lint": "node ./cli/size-lint.js",
