@@ -1,0 +1,17 @@
+.cover__header {
+    height: 44px;
+    margin: 0;
+    background: rgba(252, 42, 75, 1);
+    text-align: center;
+    width: 100%;
+}
+
+.cover__title {
+    font: bold 14px/1.1 sans-serif;
+}
+
+.cover__description {
+    font: 11px/1.25 sans-serif;
+    color: rgba(236, 236, 236, 0.7);
+    text-shadow: none;
+}

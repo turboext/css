@@ -90,6 +90,7 @@ app.get('/turbo', (req, res, next) => {
     }
 
     Promise.all([getTurbo(req, query), getHostCSS(hostname)]).then(([html, style]) => {
+        console.log('style....', style);
         res.status(200);
 
         const $ = cheerio.load(html);
