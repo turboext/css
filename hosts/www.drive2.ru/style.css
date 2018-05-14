@@ -32,8 +32,8 @@
 .header__title-link {
     width: 120px;
     height: 50px;
-    background: #c03 url(./logo.svg) no-repeat;
     background-size: contain;
+    background: #c03 url(./logo.svg) no-repeat;
 }
 
 .cover .divider,
