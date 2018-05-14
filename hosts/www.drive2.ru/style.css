@@ -32,7 +32,6 @@
 .header__title-link {
     width: 120px;
     height: 50px;
-    background-size: contain;
     background: #c03 url(./logo.svg) no-repeat;
 }
 
