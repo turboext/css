@@ -17,11 +17,6 @@ function exec(cmd, cwd = checkoutDirectory) {
 }
 
 function clone() {
-    const master = getCheckoutDirectory('master');
-    if (fs.existsSync(master)) {
-        return exec(`cp -r ${master} ${checkoutDirectory}`, cwd);
-    }
-
     const remotes = `
 [remote "origin"]
     fetch = +refs/heads/*:refs/remotes/origin/*
@@ -30,34 +25,16 @@ function clone() {
 
     exec(`git clone https://github.com/turboext/css.git ${checkoutDirectory}`, cwd);
     exec(`echo '${remotes}' >> .git/config`);
-}
-
-function pull(pullRequest) {
-    if (pullRequest === 'master') {
-        // may be useful for PRs branch later
-        exec('git fetch');
-        exec('git pull origin master');
-        return;
-    }
-
-    // may fail if branch has been rebased
-    const { status } = exec(`git pull origin refs/${pullRequest}/head`);
-
-    if (status !== 0) {
-        console.log('Could not update PR. Recreating...');
-        exec(`rm -rf ${checkoutDirectory}`, cwd);
-        clone();
-        checkout(pullRequest);
-    }
+    exec('git fetch --all');
 }
 
 function checkout(pullRequest) {
     exec(`git checkout ${pullRequest}`);
 }
 
-if (!fs.existsSync(checkoutDirectory)) {
-    clone();
-    checkout(pullRequest);
-} else {
-    pull(pullRequest);
+if (fs.existsSync(checkoutDirectory)) {
+    exec(`rm -rf ${checkoutDirectory}`);
 }
+
+clone();
+checkout(pullRequest);
