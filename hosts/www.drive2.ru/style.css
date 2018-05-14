@@ -6,6 +6,10 @@
     color: #205090;
 }
 
+.button {
+    background-color: #fff;
+}
+
 .markup__link {
     text-decoration: underline;
     text-decoration-color: rgba(32,80,144,.35);
