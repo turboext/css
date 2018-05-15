@@ -8,6 +8,10 @@ const path = require('path');
 const qs = require('querystring');
 const compression = require('compression');
 
+if (!process.env.NODE_ENV) {
+    process.env.NODE_ENV = 'development';
+}
+
 const getHostCSS = require('./lib/server/get-host-css');
 
 app.get('/', (req, res) => {
