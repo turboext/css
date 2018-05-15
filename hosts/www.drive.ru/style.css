@@ -59,7 +59,7 @@ a.button:last-child {
     padding: 0 25px !important;
 }
 
-a.footer__link {
+.footer__link {
     font-size: 13px;
     color: #999;
 }
