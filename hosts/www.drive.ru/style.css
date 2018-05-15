@@ -1,17 +1,65 @@
+body {
+    background-color: #e8e8e8;
+}
+
+.markup__link {
+    color: rgb(68, 84, 111);
+    text-decoration: underline;
+}
+
 .cover__header {
-    height: 44px;
+    height: 30px;
     margin: 0;
     background: rgba(252, 42, 75, 1);
     text-align: center;
     width: 100%;
 }
 
-.cover__title {
-    font: bold 14px/1.1 sans-serif;
+.header-title {
+    text-transform: uppercase;
+    color: #fff !important;
+    font-family: "Helvetica Narrow","Arial Narrow";
+    font-size: 24px;
 }
 
 .cover__description {
-    font: 11px/1.25 sans-serif;
+    font: 12px/1.25 sans-serif;
     color: rgba(236, 236, 236, 0.7);
     text-shadow: none;
+}
+
+.image_type_logo {
+    display: none;
+}
+
+.sandwich-menu__handler {
+    position: relative;
+    margin-top: 5px;
+    margin-right: 10px;
+    width: 21px;
+    height: 50px;
+    background: url(https://www.drive.ru/images/menu_trigger.svg) 0 0 no-repeat;
+    transform: scaleY(0.6);
+}
+
+.cover__content {
+    position: relative;
+}
+
+.page__source, .page__footer {
+    text-align: center;
+}
+
+a.button:last-child {
+    background-color: #fff;
+    -moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+    width: 80%;
+    padding: 0 25px !important;
+}
+
+a.footer__link {
+    font-size: 13px;
+    color: #999;
 }
