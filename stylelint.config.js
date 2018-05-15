@@ -18,8 +18,7 @@ module.exports = {
             'mask-border',
             'clip-path'
         ],
-        'declaration-property-value-whitelist': {
-            'content': ['\'\'']
-        }
+        'function-url-scheme-whitelist': '/^\.\//',
+        'function-url-no-scheme-relative': true
     }
 };
