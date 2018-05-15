@@ -17,10 +17,6 @@
     width: 100%;
 }
 
-.cover__content {
-    position: relative;
-}
-
 .cover__content > .divider {
     padding-top: 52px;
 }
