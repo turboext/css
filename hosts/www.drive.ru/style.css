@@ -1,0 +1,73 @@
+.page {
+    background-color: #e8e8e8;
+}
+
+.markup__link {
+    color: rgb(68, 84, 111);
+    text-decoration: underline;
+}
+
+.cover__header {
+    position: absolute;
+    left: 0;
+    height: 30px;
+    margin: 0;
+    background: rgba(252, 42, 75, 1);
+    text-align: center;
+    width: 100%;
+}
+
+.cover__content > .divider {
+    padding-top: 52px;
+}
+
+.header_logo-host .header-title {
+    text-transform: uppercase;
+    color: #fff;
+    font-family: "Helvetica Narrow", "Arial Narrow", Arial, sans-serif;
+    font-size: 24px;
+}
+
+.cover__description {
+    font: 12px/1.25 sans-serif;
+    color: rgba(236, 236, 236, 0.7);
+    text-shadow: none;
+}
+
+.header-turbo .header-turbo-icon {
+    fill: #fff;
+}
+
+.image_type_logo {
+    display: none;
+}
+
+.sandwich-menu__handler {
+    position: relative;
+    margin-top: 5px;
+    margin-right: 10px;
+    width: 21px;
+    height: 50px;
+    background: url(menu_trigger.svg) 0 0 no-repeat;
+    transform: scaleY(0.6);
+}
+
+.page__source, .page__footer {
+    text-align: center;
+}
+
+.page__source .button {
+    background-color: #fff;
+	border-radius: 5px;
+    width: 80%;
+}
+
+.share__more {
+    background-color: #fff;
+	border-radius: 5px;
+}
+
+.footer__link {
+    font-size: 13px;
+    color: #999;
+}
