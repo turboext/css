@@ -1,0 +1,252 @@
+/* ---------------------------------------------------------------------------------------------------------------------
+ * Основное
+ * - Перекрасить в фирменные цвета: основной текст `#454648`, ссылки `#83b65b`, цитаты, кнопки
+ * - Отступы между основными элементами `20px`
+ * - Растянуть изображения на всю ширину экрана
+ * - Отступы от текста до изображения `10px`, от изображения до текста `15px`, между изображениями `5px`
+ * - Отцентровать ссылки в подвале и уменьшить размер ссылок до `14px`
+ * ---------------------------------------------------------------------------------------------------------------------
+ */
+.link {
+    color: #83b65b;
+}
+
+.page {
+    color: #454648;
+
+    &__footer {
+        font-size: 14px;
+        text-align: center;
+    }
+
+    &__unit + &__unit {
+        margin-top: 20px;
+    }
+
+    &__unit + &__footer {
+        margin-top: 20px;
+    }
+
+    &__cover + &__unit {
+        margin-top: 12px;
+    }
+}
+
+.button {
+    border-radius: 3px;
+    color: #fff;
+    background: #8ac858;
+}
+
+.author {
+    font-weight: bold;
+    color: #83b65b;
+}
+
+.blockquote.typo {
+    padding: 5px;
+    border-left: 0;
+    border-radius: 2px;
+    color: #8c8681;
+    background: #faf9f4;
+}
+
+/* Шрифт */
+.typo {
+    &_regular, &_bold, &_italic {
+        font-family: Roboto, "Open Sans", -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif;
+    }
+    &_text_xl {
+        font-size: 20px;
+    }
+}
+.markup {
+    &__paragraph.paragraph {
+        line-height: 22px;
+        color: #454648;
+    }
+    /* Развернём изображение на весь экран */
+    .image_type_block {
+        max-width: inherit;
+        max-height: 100% !important; /* переопределение inline стилей */
+        @media screen and (max-width: 359px) {
+            margin-right: -14px;
+            margin-left: -14px;
+        }
+        @media screen and (max-width: 413px) and (min-width: 360px) {
+            margin-right: -16px;
+            margin-left: -16px;
+        }
+        @media screen and (max-width: 479px) and (min-width: 414px) {
+            margin-right: -15px;
+            margin-left: -15px;
+        }
+        @media screen and (min-width: 480px) {
+            margin-right: -18px;
+            margin-left: -18px;
+        }
+        .image__img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+    &__unit + &__image {
+        margin-top: 10px;
+    }
+    &__image + &__unit {
+        margin-top: 15px;
+    }
+    &__image + &__image {
+        margin-top: 5px;
+    }
+}
+
+/* ---------------------------------------------------------------------------------------------------------------------
+ * Шапка
+ * - Высота шапки 45px
+ * - Зелёная подложка на всю ширину
+ * - Временно заменим логотип кекса для экранов с DPR > 1. Удалить, как только Turbo будут отдавать 2x logo 😄
+ * - Текст "Пикабу" в logo заменим SVG
+ * - Иконку Турбо перекрасим в белый, а сэндвич в #454648
+ * ---------------------------------------------------------------------------------------------------------------------
+ */
+.cover {
+    position: relative;
+    /* Добавим заливку для шапки на всю ширину*/
+    &:before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 45px;
+        background-color: #89c957;
+    }
+    &__description {
+        font-size: 13px;
+    }
+    &__title + &__description {
+        margin-top: 0;
+    }
+    .divider {
+        display: none;
+    }
+    .header {
+        .image_type_logo {
+            background-image: url('images/logo.png') !important; /* переопределение inline стилей */
+        }
+        &__title-link {
+            position: relative;
+            margin-right: 50px;
+            z-index: 1;
+        }
+        &_logo-host {
+            padding: 6px 0;
+        }
+    }
+    .header-turbo {
+        top: 10px;
+        .header-turbo-icon {
+            fill: #fff;
+        }
+    }
+    .header-title {
+        position: relative;
+        margin-left: 10px;
+        padding-top: 0;
+        color: transparent;
+        &:after {
+            content: '';
+            display: block;
+            position: absolute;
+            left: 0;
+            top: 5px;
+            width: 75px;
+            height: 24px;
+            background: url('./images/logo.svg') no-repeat;
+        }
+    }
+    .sandwich-menu__handler {
+        height: 45px;
+        background-image: url('./images/menu.svg');
+    }
+}
+
+/* Уберём шапку из релеватных публикаций */
+.autoload__content {
+    .cover {
+        &:before, .header, .divider {
+            display: none;
+        }
+    }
+}
+
+/* ---------------------------------------------------------------------------------------------------------------------
+ * Комментарий
+ * - Выравнить аватрки с именем пользователя на одну прямую
+ * - Добавить разделитель c подписью "Популярные комментарии" между текстом публикации и комментариями
+ * - Изменили размер аватарок до `20px 20px`
+ * ---------------------------------------------------------------------------------------------------------------------
+ */
+.comments {
+    font-size: 15px;
+    &:before {
+        display: block;
+        content: 'Популярные комментарии';
+        margin-bottom: 15px;
+        padding-bottom: 10px;
+        font-weight: 700;
+        font-size: 16px;
+        width: 100%;
+        border-bottom: 1px solid #eff2ec;
+    }
+    &__author {
+        display: flex;
+    }
+
+    &__avatar.grid.grid_square {
+        height: 20px;
+        width: 20px;
+    }
+    &__info {
+        display: flex;
+        .typo_text_m.typo_line_m {
+            line-height: 20px;
+        }
+    }
+    &__title {
+        font-size: 14px;
+        color: #777;
+    }
+    &__subtitle {
+        margin-left: 5px;
+        font-size: 14px;
+        color: #a6aca1;
+    }
+    &__title, &__title + &__subtitle {
+        margin-top: 0;
+        &:after, &:before {
+            display: none;
+        }
+    }
+    &__comment + &__comment {
+        margin-top: 20px;
+        padding-top: 0;
+        border-top: 0;
+    }
+    &__comment-text {
+        margin-top: 2px;
+        .paragraph {
+            margin: 0;
+            color: #454648;
+        }
+        .blockquote {
+            margin-bottom: 5px;
+        }
+    }
+    .button {
+        color: #454648;
+        background-color: #eff2ec;
+    }
+}
+
