@@ -38,7 +38,7 @@
     margin-right: 10px;
     width: 21px;
     height: 50px;
-    background: url(https://www.drive.ru/images/menu_trigger.svg) 0 0 no-repeat;
+    background: url(menu_trigger.svg) 0 0 no-repeat;
     transform: scaleY(0.6);
 }
 
