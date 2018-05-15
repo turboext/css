@@ -46,6 +46,8 @@ npm test # для локального запуска тестов
     * android 4
     * iOS 9
     * IE 11
+* Векторные изображения предпочтительнее растровых. Размер всех изображений должен быть оптимизирован до приемлемого уровня качества.
+    * Для оптимизации SVG рекомендуется использовать  [svgo](https://www.npmjs.com/package/svgo) со следующими опциями: `svgo -p 2 --multipass --enable=removeDesc --enable=removeTitle --enable=sortAttrs --enable=removeViewBox --enable=removeStyleElement -i [PATH_TO_SVG]`.
 
 # Внесение изменений в стили
 1. Сделать fork репозитория;
