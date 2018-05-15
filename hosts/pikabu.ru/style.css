@@ -11,6 +11,14 @@
     color: #83b65b;
 }
 
+.grid_wrap {
+    width: 100%;
+}
+
+.image_type_block.image_caption_off {
+    background-position: center;
+}
+
 .page {
     color: #454648;
 
@@ -66,24 +74,26 @@
         color: #454648;
     }
     /* Развернём изображение на весь экран */
-    .image_type_block {
+    .image_type_block,
+    .image_type_inline {
         max-width: inherit;
+        width: 101vw !important;
         max-height: 100% !important; /* переопределение inline стилей */
         @media screen and (max-width: 359px) {
-            margin-right: -14px;
-            margin-left: -14px;
+            margin-right: -14px !important;
+            margin-left: -14px !important;
         }
         @media screen and (max-width: 413px) and (min-width: 360px) {
-            margin-right: -16px;
-            margin-left: -16px;
+            margin-right: -16px !important;
+            margin-left: -16px !important;
         }
         @media screen and (max-width: 479px) and (min-width: 414px) {
-            margin-right: -15px;
-            margin-left: -15px;
+            margin-right: -15px !important;
+            margin-left: -15px !important;
         }
         @media screen and (min-width: 480px) {
-            margin-right: -18px;
-            margin-left: -18px;
+            margin-right: -18px !important;
+            margin-left: -18px !important;
         }
         .image__img {
             width: 100%;
@@ -249,4 +259,3 @@
         background-color: #eff2ec;
     }
 }
-
