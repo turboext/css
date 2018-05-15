@@ -17,6 +17,10 @@
     width: 100%;
 }
 
+.cover__content {
+    position: relative;
+}
+
 .cover__content > .divider {
     padding-top: 52px;
 }
@@ -52,10 +56,6 @@
     transform: scaleY(0.6);
 }
 
-.cover__content {
-    position: relative;
-}
-
 .page__source, .page__footer {
     text-align: center;
 }
@@ -64,6 +64,11 @@
     background-color: #fff;
 	border-radius: 5px;
     width: 80%;
+}
+
+.share__more {
+    background-color: #fff;
+	border-radius: 5px;
 }
 
 .footer__link {
