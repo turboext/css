@@ -56,6 +56,7 @@
     &_regular, &_bold, &_italic {
         font-family: Roboto, "Open Sans", -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif;
     }
+
     &_text_xl {
         font-size: 20px;
     }
@@ -65,39 +66,59 @@
         line-height: 22px;
         color: #454648;
     }
+
     /* Развернём изображение на весь экран */
     .image_type_block {
         max-width: inherit;
         max-height: 100% !important; /* переопределение inline стилей */
+
         @media screen and (max-width: 359px) {
             margin-right: -14px;
             margin-left: -14px;
         }
+
         @media screen and (max-width: 413px) and (min-width: 360px) {
             margin-right: -16px;
             margin-left: -16px;
         }
+
         @media screen and (max-width: 479px) and (min-width: 414px) {
             margin-right: -15px;
             margin-left: -15px;
         }
+
         @media screen and (min-width: 480px) {
             margin-right: -18px;
             margin-left: -18px;
         }
+
         .image__img {
             width: 100%;
             height: 100%;
         }
+
+        /* @see https://yadi.sk/i/itZSt0-Z3Vx7X9 */
+        &.image_caption_off {
+            background-position: center;
+        }
     }
+
     &__unit + &__image {
         margin-top: 10px;
     }
+
     &__image + &__unit {
         margin-top: 15px;
     }
+
     &__image + &__image {
         margin-top: 5px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .grid_wrap {
+        width: 100vw;
     }
 }
 
@@ -112,6 +133,7 @@
  */
 .cover {
     position: relative;
+
     /* Добавим заливку для шапки на всю ширину*/
     &:before {
         content: '';
@@ -122,30 +144,38 @@
         height: 45px;
         background-color: #89c957;
     }
+
     &__description {
         font-size: 13px;
     }
+
     &__title + &__description {
         margin-top: 0;
     }
+
     .divider {
         display: none;
     }
+
     .header {
         .image_type_logo {
             background-image: url('images/logo.png') !important; /* переопределение inline стилей */
         }
+
         &__title-link {
             position: relative;
             margin-right: 50px;
             z-index: 1;
         }
+
         &_logo-host {
             padding: 6px 0;
         }
     }
+
     .header-turbo {
         top: 10px;
+
         .header-turbo-icon {
             fill: #fff;
         }
@@ -155,6 +185,7 @@
         margin-left: 10px;
         padding-top: 0;
         color: transparent;
+
         &:after {
             content: '';
             display: block;
@@ -166,6 +197,7 @@
             background: url('./images/logo.svg') no-repeat;
         }
     }
+
     .sandwich-menu__handler {
         height: 45px;
         background-image: url('./images/menu.svg');
@@ -190,6 +222,7 @@
  */
 .comments {
     font-size: 15px;
+
     &:before {
         display: block;
         content: 'Популярные комментарии';
@@ -200,6 +233,7 @@
         width: 100%;
         border-bottom: 1px solid #eff2ec;
     }
+
     &__author {
         display: flex;
     }
@@ -208,45 +242,54 @@
         height: 20px;
         width: 20px;
     }
+
     &__info {
         display: flex;
+
         .typo_text_m.typo_line_m {
             line-height: 20px;
         }
     }
+
     &__title {
         font-size: 14px;
         color: #777;
     }
+
     &__subtitle {
         margin-left: 5px;
         font-size: 14px;
         color: #a6aca1;
     }
+
     &__title, &__title + &__subtitle {
         margin-top: 0;
         &:after, &:before {
             display: none;
         }
     }
+
     &__comment + &__comment {
         margin-top: 20px;
         padding-top: 0;
         border-top: 0;
     }
+
     &__comment-text {
         margin-top: 2px;
+
         .paragraph {
             margin: 0;
             color: #454648;
         }
+
         .blockquote {
             margin-bottom: 5px;
         }
     }
+
     .button {
         color: #454648;
         background-color: #eff2ec;
     }
 }
-
