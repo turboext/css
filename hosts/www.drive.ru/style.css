@@ -18,7 +18,7 @@
 .header-title {
     text-transform: uppercase;
     color: #fff !important;
-    font-family: "Helvetica Narrow","Arial Narrow";
+    font-family: "Helvetica Narrow", "Arial Narrow", Arial, sans-serif;
     font-size: 24px;
 }
 
