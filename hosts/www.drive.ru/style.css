@@ -50,13 +50,10 @@ body {
     text-align: center;
 }
 
-a.button:last-child {
+.page__source .button {
     background-color: #fff;
-    -moz-border-radius: 5px;
-	-webkit-border-radius: 5px;
 	border-radius: 5px;
     width: 80%;
-    padding: 0 25px !important;
 }
 
 .footer__link {
