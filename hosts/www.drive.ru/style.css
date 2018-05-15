@@ -8,11 +8,17 @@
 }
 
 .cover__header {
+    position: absolute;
+    left: 0;
     height: 30px;
     margin: 0;
     background: rgba(252, 42, 75, 1);
     text-align: center;
     width: 100%;
+}
+
+.cover__content > .divider {
+    padding-top: 52px;
 }
 
 .header-title {
