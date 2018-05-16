@@ -11,8 +11,15 @@
     color: #83b65b;
 }
 
+/* скрываем переполнение по горизонтали при отображении в <iframe/> */
+.ua_frame_yes {
+    .page__container {
+        overflow-x: hidden;
+    }
+}
+
 .page {
-    overflow: hidden;
+    overflow-x: hidden;
     color: #454648;
 
     &__footer {
