@@ -12,6 +12,7 @@
 }
 
 .page {
+    overflow: hidden;
     color: #454648;
 
     &__footer {
