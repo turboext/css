@@ -6,7 +6,7 @@ module.exports = {
     rules: {
         'plugin/no-low-performance-animation-properties': true,
         'unit-whitelist': ['px', '%', 'rem', 's', 'ms', 'deg', 'vw', 'vh'],
-        'selector-max-specificity': '0,3,0',
+        'selector-max-specificity': '0,4,0',
         'selector-max-type': 0,
         'at-rule-blacklist': ['font-face', 'import'],
         'property-blacklist': [
@@ -18,8 +18,7 @@ module.exports = {
             'mask-border',
             'clip-path'
         ],
-        'declaration-property-value-whitelist': {
-            'content': ['\'\'']
-        }
+        'function-url-scheme-whitelist': '/^\.\//',
+        'function-url-no-scheme-relative': true
     }
 };

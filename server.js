@@ -7,6 +7,12 @@ const fs = require('fs');
 const path = require('path');
 const qs = require('querystring');
 const compression = require('compression');
+const removeCSP = require('./lib/server/remove-csp');
+const replaceCustomCSS = require('./lib/server/replace-custom-css');
+
+if (!process.env.NODE_ENV) {
+    process.env.NODE_ENV = 'development';
+}
 
 const getHostCSS = require('./lib/server/get-host-css');
 
@@ -115,26 +121,10 @@ app.get('/turbo', (req, res, next) => {
     }
 
     Promise.all([getTurbo(req, url, params), getHostCSS(req, hostname)]).then(([rawHtml, style]) => {
-        const meta = /<meta http-equiv=Content-Security-Policy content="[^"]+">/;
-        let html = rawHtml.replace(meta, '');
+        let html = removeCSP(rawHtml);
+        html = replaceCustomCSS(html, style);
 
-        const customStyle = '<style data-name=custom';
-        const customStyleStartsAt = html.indexOf(customStyle);
-        const search = '</style>';
-
-        if (customStyleStartsAt !== -1) {
-            // уже существуют кастомные стили для сайта, значит их нужно удалить
-            const endsAt = html.indexOf(search, customStyle);
-            html = html.substr(0, customStyleStartsAt) + html.substr(endsAt + search.length);
-        }
-
-        // @TODO: find style selector in head only
-        const index = html.lastIndexOf(search) + search.length;
-
-        const before = html.substr(0, index);
-        const after = html.substr(index);
-
-        res.send(before + `<style data-name="custom">${style}</style>` + after);
+        res.send(html);
     }).catch(e => next(e));
 });
 
