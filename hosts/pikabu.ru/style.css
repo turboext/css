@@ -11,7 +11,15 @@
     color: #83b65b;
 }
 
+/* скрываем переполнение по горизонтали при отображении в <iframe/> */
+.ua_frame_yes {
+    .page__container {
+        overflow-x: hidden;
+    }
+}
+
 .page {
+    overflow-x: hidden;
     color: #454648;
 
     &__footer {
@@ -124,6 +132,13 @@
 @media screen and (max-width: 480px) {
     .grid_wrap {
         width: 100vw;
+    }
+}
+
+/* на маленьком разрешении сыпится заголовок */
+@media screen and (max-width: 310px) {
+    .grid_unwrap {
+        margin: 0 -14px;
     }
 }
 

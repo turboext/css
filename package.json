@@ -6,7 +6,9 @@
   "main": "index.js",
   "scripts": {
     "start": "node server.js",
-    "test": "eslint . && npm run lint && npm run size-lint && npm run host-lint && npm run build",
+    "test": "npm run test:css && npm run test:unit",
+    "test:css": "eslint . && npm run lint && npm run size-lint && npm run host-lint && npm run build",
+    "test:unit": "mocha",
     "lint": "npm run stylelint",
     "stylelint": "stylelint hosts/**/*.css",
     "minify": "node ./cli/minifier.js",
@@ -47,13 +49,15 @@
     "stylelint-config-recommended-scss": "3.2.0",
     "stylelint-csstree-validator": "1.2.2",
     "stylelint-declaration-use-variable": "1.6.1",
-    "stylelint-high-performance-animation": "^1.0.0",
+    "stylelint-high-performance-animation": "1.0.0",
     "stylelint-order": "0.8.1",
     "stylelint-scss": "3.1.0"
   },
   "devDependencies": {
     "@types/fs-extra": "5.0.2",
+    "chai": "4.1.2",
     "eslint": "4.19.1",
-    "nodemon": "^1.17.4"
+    "mocha": "5.1.1",
+    "nodemon": "1.17.4"
   }
 }
