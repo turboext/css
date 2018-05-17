@@ -44,12 +44,11 @@
 
 .sandwich-menu__handler {
     position: relative;
-    margin-top: 5px;
     margin-right: 10px;
     width: 21px;
     height: 50px;
-    background: url(menu_trigger.svg) 0 0 no-repeat;
-    transform: scaleY(0.6);
+    background: url(menu_trigger.svg) center no-repeat;
+    background-size: 100%;
 }
 
 .page__source, .page__footer {
