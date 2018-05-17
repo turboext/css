@@ -1,3 +1,8 @@
+/* проблема с горизонтальным скроллом */
+.ua_frame_yes .page__container {
+    overflow-x: hidden;
+}
+
 .page {
     background-color: #e8e8e8;
 }
