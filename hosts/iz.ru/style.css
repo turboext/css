@@ -38,7 +38,7 @@
   z-index: 1;
 }
 .header.cover__header > .link {
-  background: transparent url('./iz-logo-full.min.v2.svg') no-repeat 50%;
+  background: transparent url('./iz-logo-full.svg') no-repeat 50%;
   background-size: 109px 25px;
   position: relative;
   z-index: 1;
@@ -87,30 +87,35 @@
 .cover__content > .divider {
   padding-top: 52px;
 }
-.divider+.cover__title {
+.cover__title {
   font-size: 20px;
   line-height: normal;
   color: #000;
+}
+.divier + .cover__title {
   margin-top: 22px;
   margin-bottom: 22px;
 }
 .cover__content > .cover__description {
-  color: #aaa;
   font-size: 14px;
   line-height: 1.1;
   vertical-align: top;
+}
+.cover__title+.cover__description {
   margin-top: 22px;
+}
+.cover .cover__description.description {
+  color: #999;
 }
 .page__unit .paragraph {
   font-size: 16px;
   line-height: 23px;
   margin-bottom: 15px;
 }
-.source.page__source .button_theme_default {
+.page__source .button_theme_default {
   background-color: #452963;
   color: #fff;
   border-radius: 0;
-  border: 0px none;
 }
 .grid.grid_margin-x {
   padding-left: 10px;
@@ -153,13 +158,6 @@
   content: '';
   display: block;
   padding: 100% 0 0;
-}
-.collection .collection__item {
-  background: #f6f6f6;
-  padding: 10px 10px 10px;
-}
-.collection .collection__item + .collection__item {
-  border-top: 1px solid #e6e6e6;
 }
 .modal .modal__container {
   background: #878679;
