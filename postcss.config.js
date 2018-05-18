@@ -10,9 +10,12 @@ const plugins = [
     require('postcss-nested'),
     require('postcss-url')({ url: 'inline' }),
     require('autoprefixer')({ browsers }),
-    require('postcss-reporter')(),
-    require('cssnano')()
+    require('postcss-reporter')()
 ];
+
+if (process.env.NODE_ENV !== 'development') {
+    plugins.push(require('cssnano')());
+}
 
 module.exports = {
     plugins

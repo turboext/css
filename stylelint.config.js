@@ -20,5 +20,10 @@ module.exports = {
         ],
         'function-url-scheme-whitelist': '/^\.\//',
         'function-url-no-scheme-relative': true
-    }
+    },
+    ignoreFiles: [
+        'hosts/**/*.min.css',
+        'hosts/**/*.css.gz',
+        'hosts/**/*.yaml'
+    ]
 };

@@ -17,7 +17,7 @@
 ```
 git clone https://github.com/turboext/css.git # или fork
 cd css
-yarn # или npm install
+npm install
 nvm use # если у вас установлен nvm
 npm start
 npm test # для локального запуска тестов
@@ -25,8 +25,14 @@ npm test # для локального запуска тестов
 
 Использование:
 * открыть http://localhost:3000 и выбрать адрес вашей турбо-страницы, например: `https://rozhdestvenskiy.ru/turbo/`, или `https://yandex.ru/turbo?text=https://rozhdestvenskiy.ru/`;
-* внести изменения в `hosts/*/style.css`;
-* обновить страницу.
+* внести изменения в `hosts/*/style.s?css`;
+* по-умолчанию включён livereload режим, в котором изменения применяются автоматически без обновления страницы. Если с ним возникли сложности, нужно запустить процесс с переменной окружения `LIVERELOAD=false`:
+    * mac os x / linux — `LIVERELOAD=false npm start`
+    * windows — `set LIVERELOAD=false&& npm start`
+* для доступа к локальной бете с мобильного телефона можно использовать встроенное тунеллирование на базе ngrok:
+    * mac os x / linux — `PUBLIC=true npm start`
+    * windows — `set PUBLIC=true&& npm start`
+* для тестирования страницы внутри iframe — нужно использовать адрес `/frame`, вместо `/turbo`.
 
 # Ограничения
 Ограничения указаны в [конфиге](stylelint.config.js) [stylelint](https://stylelint.io/):
@@ -52,10 +58,9 @@ npm test # для локального запуска тестов
 # Внесение изменений в стили
 1. Сделать fork репозитория;
 1. Создать директорию `hosts/example.com`;
-1. В директории должно быть несколько обязательных файлов — `HOSTS.yaml, OWNERS.yaml, style.css`.
-    * `HOSTS.yaml` должен содержать список доменов для которых должны применяться текущие стили, например:
+1. В директории должно быть несколько обязательных файлов — `HOSTS.yaml, OWNERS.yaml, style.css`. Возможен вариант `style.scss` для использования синтаксиса SCSS.
+    * `HOSTS.yaml` должен быть указан домен для которых будут применяться текущие стили, например:
         ```yaml
-        - https://www.rozhdestvenskiy.ru
         - https://rozhdestvenskiy.ru
         ```
     Протокол (http, https) обязателен. Фактически, это адрес сайта из https://webmaster.yandex.ru
