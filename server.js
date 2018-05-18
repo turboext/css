@@ -2,6 +2,10 @@ if (!process.env.NODE_ENV) {
     process.env.NODE_ENV = 'development';
 }
 
+if (!process.env.LIVERELOAD) {
+    process.env.LIVERELOAD = 'true';
+}
+
 const express = require('express');
 const app = module.exports = express();
 const rp = require('request-promise');
