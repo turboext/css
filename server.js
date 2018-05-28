@@ -104,7 +104,11 @@ const DEV_SERVER_PORT = 3000;
 const LIVRELOAD_PORT = 35729;
 const PUBLIC = process.env.PUBLIC === 'true';
 
-console.log(`NODE_ENV=${process.env.NODE_ENV}, LIVRELOAD=${process.env.LIVERELOAD}, PUBLIC=${process.env.PUBLIC}`);
+const debug = ['NODE_ENV', 'LIVERELOAD', 'PUBLIC']
+    .filter(v => process.env[v])
+    .map(v =>  `${v}=${process.env[v]}`).join(', ');
+
+console.log(`Env variables: ${chalk.gray(debug)}`);
 
 app.listen(DEV_SERVER_PORT, () => {
     if (PUBLIC) {
@@ -117,21 +121,18 @@ app.listen(DEV_SERVER_PORT, () => {
             process.exit(1);
         });
     } else {
-        console.log(`DevServer started at ${chalk.blue.underline(`http://localhost:${DEV_SERVER_PORT}`)}`);
+        let output = `DevServer started at ${chalk.blue.underline(`http://localhost:${DEV_SERVER_PORT}`)}`;
+        if (process.env.LIVERELOAD === 'true' && process.env.NODE_ENV !== 'production') {
+            const livereload = require('./lib/server/lr');
+            livereload().listen(LIVRELOAD_PORT, () => {
+                output += chalk.gray(`, live reload started at http://localhost:${LIVRELOAD_PORT}`);
+                console.log(output);
+            });
+        } else {
+            console.log(output);
+        }
     }
 });
-
-if (process.env.LIVERELOAD === 'true' && process.env.NODE_ENV !== 'production') {
-    if (PUBLIC) {
-        console.log('Livereload has beed disabled due public mode');
-        process.env.LIVERELOAD = 'false';
-    } else {
-        const livereload = require('./lib/server/lr');
-        livereload().listen(LIVRELOAD_PORT, () => {
-            console.log(`LiveReload started at ${chalk.blue.underline(`http://localhost:${LIVRELOAD_PORT}`)}`);
-        });
-    }
-}
 
 /**
  **
