@@ -1,0 +1,79 @@
+.page {
+  background-color: #fff6f1;
+  font-family: Georgia, serif;
+}
+
+.header_wide-logo .image {
+  background-position-x: center;
+  background-image: url('images/logo.svg') !important;
+}
+
+.header.header_size_s {
+  padding: 14px 0 8px;
+}
+
+.header.header_size_s .image {
+  height: 32px;
+}
+
+.header__title-link {
+  text-align: center
+}
+
+.page__title {
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-size: 27px;
+  font-weight: 400;
+}
+
+.cover .cover__description.description {
+  color: #857871;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-size: 15px;
+  margin-top: 20px;
+}
+
+.cover .image_cover {
+  margin-top: 20px;
+}
+
+.page__cover + .page__markup {
+  margin-top: 20px
+}
+
+.paragraph.markup__paragraph {
+  font-size: 17px;
+  line-height: 22px;
+  color: #423e3d;
+  margin-bottom: 15px;
+}
+
+.page__markup + .page__related {
+  margin-top: 52px;
+}
+
+.related__title {
+  font-size: 24px;
+  line-height: 34px;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  color: #2e6f6f;
+  font-weight: 400;
+}
+
+.link {
+  color: #2e6f6f
+}
+
+.snippet__title-link {
+  font-size: 19px;
+  color: #332f2e;
+}
+
+.snippet__footer .meta__item {
+  color: #857871;
+}
+
+.page__reference-button {
+  background-color: transparent;
+  border: 1px solid #e3d1c7;
+}
