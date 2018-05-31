@@ -1,0 +1,14 @@
+/* Размер карточек */
+.cards__carousel-item {
+    width: 180px;
+}
+.cards__carousel-item .image-simple {
+    height: 120px;
+}
+/* Фикс бага с размером лупы в заголовке */
+.cover__content > .link > .image {
+    padding: 0 !important;
+    min-width: auto !important;
+    height: 24px !important;
+    background-size: contain !important;
+}
