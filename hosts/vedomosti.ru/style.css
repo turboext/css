@@ -37,18 +37,18 @@
   margin-top: 20px;
 }
 
-.page__cover + .page__markup {
+.page__cover + .page__markup { /* stylelint-disable-line */
   margin-top: 20px
 }
 
-.paragraph.markup__paragraph {
+.paragraph.markup__paragraph { /* stylelint-disable-line */
   font-size: 17px;
   line-height: 22px;
   color: #423e3d;
   margin-bottom: 15px;
 }
 
-.page__markup + .page__related {
+.page__markup + .page__related { /* stylelint-disable-line */
   margin-top: 52px;
 }
 
