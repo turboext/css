@@ -2,7 +2,7 @@
     font-weight: normal;
 }
 
-.page__cover + .page__markup {
+.page__cover + .page__markup { /* stylelint-disable-line */
     margin-top: 10px;
 }
 
