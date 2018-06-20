@@ -1,0 +1,10 @@
+.tabs .button_theme_default.button_action {
+    color: #fff;
+    background-color: #555;
+}
+
+.table .link,
+.cards .link{
+    color: #000;
+    display: block;
+}
