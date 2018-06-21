@@ -1,9 +1,9 @@
 /* проблема с горизонтальным скроллом */
-.ua_frame_yes .page__container {
+.ua_frame_yes .page__container { /* stylelint-disable-line */
     overflow-x: hidden;
 }
 
-.typo_regular {
+.typo_regular { /* stylelint-disable-line */
   font-family: "Fira Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
 }
 .header.cover__header {
@@ -112,17 +112,17 @@
 .cover .cover__description.description {
   color: #999;
 }
-.page__unit .paragraph {
+.page__unit .paragraph { /* stylelint-disable-line */
   font-size: 16px;
   line-height: 23px;
   margin-bottom: 15px;
 }
-.page__source .button_theme_default {
+.page__source .button_theme_default { /* stylelint-disable-line */
   background-color: #452963;
   color: #fff;
   border-radius: 0;
 }
-.grid.grid_margin-x {
+.grid.grid_margin-x { /* stylelint-disable-line */
   padding-left: 10px;
   padding-right: 10px;
 }

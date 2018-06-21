@@ -20,7 +20,7 @@
   text-align: center
 }
 
-.page__title {
+.page__title { /* stylelint-disable-line */
   font-family: "Helvetica Neue", Arial, sans-serif;
   font-size: 27px;
   font-weight: 400;
@@ -73,7 +73,7 @@
   color: #857871;
 }
 
-.page__reference-button {
+.page__reference-button { /* stylelint-disable-line */
   background-color: transparent;
   border: 1px solid #e3d1c7;
 }

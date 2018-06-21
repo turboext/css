@@ -1,5 +1,5 @@
 /* проблема с горизонтальным скроллом */
-.ua_frame_yes .page__container {
+.ua_frame_yes .page__container { /* stylelint-disable-line */
     overflow-x: hidden;
 }
 
@@ -56,11 +56,11 @@
     background-size: 100%;
 }
 
-.page__source, .page__footer {
+.page__source, .page__footer { /* stylelint-disable-line */
     text-align: center;
 }
 
-.page__source .button {
+.page__source .button { /* stylelint-disable-line */
     background-color: #fff;
     border-radius: 5px;
     width: 80%;
