@@ -20,7 +20,7 @@ module.exports = {
         ],
         'function-url-scheme-whitelist': '/^\.\//',
         'function-url-no-scheme-relative': true,
-        'selector-class-pattern': '^((?!markup).)*$'
+        'selector-class-pattern': '^((?!markup|page__|typo|grid).)*$'
     },
     ignoreFiles: [
         'hosts/**/*.min.css',

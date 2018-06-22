@@ -6,11 +6,11 @@
     margin-top: 10px;
 }
 
-.page__unit + .page__footer {
+.page__unit + .page__footer { /* stylelint-disable-line */
     margin-top: 20px;
 }
 
-.page__source {
+.page__source { /* stylelint-disable-line */
     display: none;
 }
 
