@@ -19,6 +19,12 @@ module.exports = {
             'clip-path'
         ],
         'function-url-scheme-whitelist': '/^\.\//',
-        'function-url-no-scheme-relative': true
-    }
+        'function-url-no-scheme-relative': true,
+        'selector-class-pattern': '^((?!markup|page__|typo|grid).)*$'
+    },
+    ignoreFiles: [
+        'hosts/**/*.min.css',
+        'hosts/**/*.css.gz',
+        'hosts/**/*.yaml'
+    ]
 };

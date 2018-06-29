@@ -6,16 +6,16 @@
   "main": "index.js",
   "scripts": {
     "start": "node server.js",
-    "test": "npm run test:css && npm run test:unit",
-    "test:css": "eslint . && npm run lint && npm run size-lint && npm run host-lint && npm run build",
-    "test:unit": "mocha",
-    "lint": "npm run stylelint",
-    "stylelint": "stylelint hosts/**/*.css",
+    "test": "npm run lint && npm run unit && npm run build",
+    "unit": "mocha",
+    "lint": "npm run lint:style && npm run lint:hosts && npm run lint:size && npm run lint:js",
+    "lint:style": "stylelint hosts/**/style.*",
+    "lint:hosts": "node ./cli/host-lint",
+    "lint:size": "node ./cli/size-lint",
+    "lint:js": "eslint .",
     "minify": "node ./cli/minifier.js",
     "gzip": "node ./cli/gzip.js",
-    "size-lint": "node ./cli/size-lint.js",
     "build": "node ./cli/build.js",
-    "host-lint": "node ./cli/host-css-count-lint.js && node ./cli/host-yaml-lint.js",
     "clean": "find css -name '*.min.css' -o -name '*.css.gz' | xargs rm"
   },
   "repository": {
@@ -37,10 +37,12 @@
     "fs-extra": "5.0.0",
     "glob": "7.1.2",
     "js-yaml": "3.11.0",
+    "ngrok": "^3.0.1",
     "postcss-cli": "5.0.0",
     "postcss-import": "11.1.0",
     "postcss-nested": "3.0.0",
     "postcss-reporter": "5.0.0",
+    "postcss-scss": "1.0.5",
     "postcss-url": "7.3.2",
     "precss": "3.1.2",
     "request": "2.85.0",
@@ -58,6 +60,9 @@
     "chai": "4.1.2",
     "eslint": "4.19.1",
     "mocha": "5.1.1",
-    "nodemon": "1.17.4"
+    "chokidar": "2.0.3",
+    "express-livereload": "0.0.24",
+    "nodemon": "1.17.4",
+    "tiny-lr": "1.1.1"
   }
 }

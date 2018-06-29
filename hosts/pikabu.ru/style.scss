@@ -13,7 +13,7 @@
 
 /* скрываем переполнение по горизонтали при отображении в <iframe/> */
 .ua_frame_yes {
-    .page__container {
+    .page__container { /* stylelint-disable-line */
         overflow-x: hidden;
     }
 }
@@ -41,7 +41,7 @@
 }
 
 .button {
-    border-radius: 3px;
+    border-radius: 3s;
     color: #fff;
     background: #8ac858;
 }
@@ -51,7 +51,7 @@
     color: #83b65b;
 }
 
-.blockquote.typo {
+.blockquote.typo { /* stylelint-disable-line */
     padding: 5px;
     border-left: 0;
     border-radius: 2px;
@@ -60,7 +60,7 @@
 }
 
 /* Шрифт */
-.typo {
+.typo { /* stylelint-disable-line */
     &_regular, &_bold, &_italic {
         font-family: Roboto, "Open Sans", -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif;
     }
@@ -69,7 +69,7 @@
         font-size: 20px;
     }
 }
-.markup {
+.markup { /* stylelint-disable-line */
     &__paragraph.paragraph {
         line-height: 22px;
         color: #454648;
@@ -130,14 +130,14 @@
 }
 
 @media screen and (max-width: 480px) {
-    .grid_wrap {
+    .grid_wrap { /* stylelint-disable-line */
         width: 100vw;
     }
 }
 
 /* на маленьком разрешении сыпится заголовок */
 @media screen and (max-width: 310px) {
-    .grid_unwrap {
+    .grid_unwrap { /* stylelint-disable-line */
         margin: 0 -14px;
     }
 }
@@ -258,7 +258,7 @@
         display: flex;
     }
 
-    &__avatar.grid.grid_square {
+    &__avatar.grid.grid_square { /* stylelint-disable-line */
         height: 20px;
         width: 20px;
     }
@@ -266,7 +266,7 @@
     &__info {
         display: flex;
 
-        .typo_text_m.typo_line_m {
+        .typo_text_m.typo_line_m { /* stylelint-disable-line */
             line-height: 20px;
         }
     }

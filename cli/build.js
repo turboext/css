@@ -2,32 +2,39 @@ const yaml = require('js-yaml');
 const fs = require('fs-extra');
 const { basename, join } = require('path');
 const postcss = require('../lib/postcss');
-const hostFiles = require('../lib/host-files.js');
+const glob = require('glob');
 
 const pullRequestDir = process.argv[2] ? join('checkout', process.argv[2].replace('/', '-')) : '.';
 
-(async () => {
-    const css = {};
-    const hosts = {};
+const css = {};
+const hosts = {};
 
+(async () => {
     try {
         if (!fs.existsSync(pullRequestDir)) {
             console.error(`Pull request directory "${pullRequestDir}" doesn't exists.`);
             process.exit(1);
         }
 
-        for (const { host: dir } of hostFiles(`${pullRequestDir}/hosts/*/`)) {
-            console.log(`Processing ${dir}`);
+        const promises = glob.sync(`${pullRequestDir}/hosts/*/`).map(async dir => {
+            console.log(`Processing ${basename(dir)}`);
             const key = basename(dir);
 
-            css[key] = await postcss(join(dir, 'style.css'));
+            const cssFile = join(dir, 'style.css');
+            const scssFile = join(dir, 'style.scss');
+            const style = fs.existsSync(scssFile) ? scssFile : fs.existsSync(cssFile) ? cssFile : '';
 
-            yaml.safeLoad(await fs.readFile(join(dir, 'HOSTS.yaml'), 'utf8'))
+            css[key] = await postcss(style);
+
+            yaml.safeLoad(fs.readFileSync(join(dir, 'HOSTS.yaml'), 'utf8'))
                 .forEach(host => hosts[host] = key);
-        }
+        });
+
+        await Promise.all(promises);
 
         const output = join(pullRequestDir, 'build.json');
         fs.writeFileSync(output, JSON.stringify({ css, hosts }, null, 4));
+
         console.log(`Build was saved to ${output}`);
     } catch(e) {
         console.error(e);

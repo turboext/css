@@ -10,7 +10,7 @@
     background-color: #fff;
 }
 
-.markup__link {
+.markup__link { /* stylelint-disable-line */
     text-decoration: underline;
     text-decoration-color: rgba(32,80,144,.35);
 }

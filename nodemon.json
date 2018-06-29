@@ -2,8 +2,9 @@
   "restartable": "rs",
   "ignore": [
     ".git",
-    "node_modules/**/node_modules",
-    "checkout"
+    "node_modules/**",
+    "checkout",
+    "hosts/**"
   ],
   "verbose": true,
   "watch": [
@@ -12,7 +13,8 @@
     "cli/**"
   ],
   "env": {
-    "NODE_ENV": "development"
+    "NODE_ENV": "development",
+    "LIVERELOAD": true
   },
   "ext": "js,json"
 }

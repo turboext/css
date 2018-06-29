@@ -11,3 +11,4 @@ hosts/**/*.gz
 !hosts/**/OWNERS.yaml
 checkout
 build.json
+.env
