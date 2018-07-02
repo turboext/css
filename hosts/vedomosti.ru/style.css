@@ -3,6 +3,10 @@
   font-family: Georgia, serif;
 }
 
+.i {
+    font-family: HelveticaNeue,arial,sans-serif;
+}
+
 .header_wide-logo .image {
   background-position-x: center;
   background-image: url('images/logo.svg') !important;
@@ -20,13 +24,14 @@
   text-align: center
 }
 
-.page__title { /* stylelint-disable-line */
+.title,
+.cover .title{
   font-family: "Helvetica Neue", Arial, sans-serif;
   font-size: 27px;
   font-weight: 400;
 }
 
-.cover .cover__description.description {
+.cover .description.description {
   color: #857871;
   font-family: "Helvetica Neue", Arial, sans-serif;
   font-size: 15px;
@@ -37,19 +42,23 @@
   margin-top: 20px;
 }
 
-.page__cover + .page__markup { /* stylelint-disable-line */
-  margin-top: 20px
+.cover {
+  margin-bottom: 20px
 }
 
-.paragraph.markup__paragraph { /* stylelint-disable-line */
+.paragraph.paragraph {
   font-size: 17px;
   line-height: 22px;
   color: #423e3d;
   margin-bottom: 15px;
 }
 
-.page__markup + .page__related { /* stylelint-disable-line */
+.related {
   margin-top: 52px;
+}
+
+.related.autoload {
+    margin: 0;
 }
 
 .related__title {
@@ -73,7 +82,13 @@
   color: #857871;
 }
 
-.page__reference-button { /* stylelint-disable-line */
+.source .button {
   background-color: transparent;
   border: 1px solid #e3d1c7;
+}
+
+.footer .paragraph {
+    margin: 0;
+    font-size: 16px;
+    line-height: 18px;
 }
