@@ -11,37 +11,43 @@
     color: #83b65b;
 }
 
-/* скрываем переполнение по горизонтали при отображении в <iframe/> */
-.ua_frame_yes {
-    .page__container { /* stylelint-disable-line */
-        overflow-x: hidden;
-    }
-}
-
 .page {
     overflow-x: hidden;
     color: #454648;
+}
 
-    &__footer {
-        font-size: 14px;
-        text-align: center;
-    }
+.page,
+.button {
+    font-family: Roboto, "Open Sans", -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif;
+}
 
-    &__unit + &__unit {
-        margin-top: 20px;
-    }
+.footer {
+    font-size: 14px;
+    text-align: center;
+}
 
-    &__unit + &__footer {
-        margin-top: 20px;
-    }
+/* stylelint-disable-next-line */
+.page__unit + .page__unit,
+.unit_rect + .unit_rect,
+.unit_text_m + .unit_rect,
+.unit_rect + .unit_text_m {
+    margin-top: 20px;
+}
 
-    &__cover + &__unit {
-        margin-top: 12px;
-    }
+/* stylelint-disable-next-line */
+.page__unit + .footer,
+.unit + .footer {
+    margin-top: 20px;
+}
+
+/* stylelint-disable-next-line */
+.cover + .page__unit,
+.cover + .unit {
+    margin-top: 12px;
 }
 
 .button {
-    border-radius: 3s;
+    border-radius: 3px;
     color: #fff;
     background: #8ac858;
 }
@@ -51,7 +57,7 @@
     color: #83b65b;
 }
 
-.blockquote.typo { /* stylelint-disable-line */
+.blockquote.blockquote {
     padding: 5px;
     border-left: 0;
     border-radius: 2px;
@@ -60,84 +66,90 @@
 }
 
 /* Шрифт */
-.typo { /* stylelint-disable-line */
+/* stylelint-disable-next-line */
+.typo {
     &_regular, &_bold, &_italic {
         font-family: Roboto, "Open Sans", -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif;
     }
+}
 
-    &_text_xl {
-        font-size: 20px;
+.cover .title {
+    font-size: 20px;
+}
+
+.paragraph.paragraph {
+    line-height: 22px;
+    color: #454648;
+}
+
+/* Развернём изображение на весь экран */
+.image_type_block {
+    max-width: inherit;
+    max-height: 100% !important; /* переопределение inline стилей */
+
+    @media screen and (max-width: 359px) {
+        margin-right: -14px;
+        margin-left: -14px;
+    }
+
+    @media screen and (max-width: 413px) and (min-width: 360px) {
+        margin-right: -16px;
+        margin-left: -16px;
+    }
+
+    @media screen and (max-width: 479px) and (min-width: 414px) {
+        margin-right: -15px;
+        margin-left: -15px;
+    }
+
+    @media screen and (min-width: 480px) {
+        margin-right: -18px;
+        margin-left: -18px;
+    }
+
+    @media screen and (max-width: 480px) {
+        width: 101vw !important; /* переопределение inline стилей */
+        background-size: cover !important; /* переопределение inline стилей */
+    }
+
+    .image__img {
+        width: 100%;
+        height: 100%;
+    }
+
+    /* @see https://yadi.sk/i/itZSt0-Z3Vx7X9 */
+    &.image_caption_off {
+        background-position: center;
     }
 }
-.markup { /* stylelint-disable-line */
-    &__paragraph.paragraph {
-        line-height: 22px;
-        color: #454648;
-    }
 
-    /* Развернём изображение на весь экран */
-    .image_type_block {
-        max-width: inherit;
-        max-height: 100% !important; /* переопределение inline стилей */
+/* stylelint-disable-next-line */
+.markup__unit + .image,
+.unit + .image {
+    margin-top: 10px;
+}
 
-        @media screen and (max-width: 359px) {
-            margin-right: -14px;
-            margin-left: -14px;
-        }
+/* stylelint-disable-next-line */
+.image + .markup__unit,
+.image + .unit {
+    margin-top: 15px;
+}
 
-        @media screen and (max-width: 413px) and (min-width: 360px) {
-            margin-right: -16px;
-            margin-left: -16px;
-        }
-
-        @media screen and (max-width: 479px) and (min-width: 414px) {
-            margin-right: -15px;
-            margin-left: -15px;
-        }
-
-        @media screen and (min-width: 480px) {
-            margin-right: -18px;
-            margin-left: -18px;
-        }
-
-        @media screen and (max-width: 480px) {
-            width: 101vw !important; /* переопределение inline стилей */
-            background-size: cover !important; /* переопределение inline стилей */
-        }
-
-        .image__img {
-            width: 100%;
-            height: 100%;
-        }
-
-        /* @see https://yadi.sk/i/itZSt0-Z3Vx7X9 */
-        &.image_caption_off {
-            background-position: center;
-        }
-    }
-
-    &__unit + &__image {
-        margin-top: 10px;
-    }
-
-    &__image + &__unit {
-        margin-top: 15px;
-    }
-
-    &__image + &__image {
-        margin-top: 5px;
-    }
+.image + .image {
+    margin-top: 5px;
 }
 
 @media screen and (max-width: 480px) {
-    .grid_wrap { /* stylelint-disable-line */
+    /* stylelint-disable-next-line */
+    .grid_wrap {
         width: 100vw;
     }
 }
 
 /* на маленьком разрешении сыпится заголовок */
 @media screen and (max-width: 310px) {
-    .grid_unwrap { /* stylelint-disable-line */
+    /* stylelint-disable-next-line */
+    .grid_unwrap {
         margin: 0 -14px;
     }
 }
@@ -165,11 +177,11 @@
         background-color: #89c957;
     }
 
-    &__description {
+    .description {
         font-size: 13px;
     }
 
-    &__title + &__description {
+    .title + .description {
         margin-top: 0;
     }
 
@@ -241,7 +253,10 @@
  * ---------------------------------------------------------------------------------------------------------------------
  */
 .comments {
-    font-size: 15px;
+    &, .paragraph {
+        font-size: 15px;
+        line-height: 18px;
+    }
 
     &:before {
         display: block;
