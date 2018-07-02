@@ -3,16 +3,13 @@
 }
 
 .link {
+    text-decoration: underline;
+    text-decoration-color: rgba(32,80,144,.35);
     color: #205090;
 }
 
 .button {
     background-color: #fff;
-}
-
-.markup__link { /* stylelint-disable-line */
-    text-decoration: underline;
-    text-decoration-color: rgba(32,80,144,.35);
 }
 
 .cover__content:before {
