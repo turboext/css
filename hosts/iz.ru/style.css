@@ -6,7 +6,7 @@
   font-size: 16px;
   color: #fff;
 }
-.header.cover__header {
+.header.header {
   position: absolute;
   left: 0;
   width: 100%;
@@ -17,19 +17,19 @@
   border-color: #9e4bbb transparent #2b143e;
   background: linear-gradient(180deg,#69389f,#351c58);
 }
-.header.cover__header:before,
-.header.cover__header:after {
+.header.header:before,
+.header.header:after {
   content: '';
   position: absolute;
   left: 0;
   height: 50%;
   width: 100%;
 }
-.header.cover__header:before {
+.header.header:before {
   background: linear-gradient(180deg,#78329d,#5c2a7f);
   top: 0;
 }
-.header.cover__header:after {
+.header.header:after {
   background: linear-gradient(180deg,#562875,#3a1955);
   border-top: 1px solid #5c2a7f;
   top: 50%;
@@ -42,7 +42,7 @@
 .header .header__aside {
   z-index: 1;
 }
-.header.cover__header > .link {
+.header.header > .link {
   background: transparent url('./iz-logo-full.svg') no-repeat 50%;
   background-size: 109px 25px;
   position: relative;
@@ -92,24 +92,24 @@
 .cover__content > .divider {
   padding-top: 52px;
 }
-.cover__title {
+.cover .title {
   font-size: 20px;
   line-height: normal;
   color: #000;
 }
-.divier + .cover__title {
+.cover .divier + .title {
   margin-top: 22px;
   margin-bottom: 22px;
 }
-.cover__content > .cover__description {
+.cover__content > .description {
   font-size: 14px;
   line-height: 1.1;
   vertical-align: top;
 }
-.cover__title+.cover__description {
+.cover .title+.description {
   margin-top: 10px;
 }
-.cover .cover__description.description {
+.cover .description.description {
   color: #999;
 }
 .paragraph {
@@ -188,24 +188,25 @@
   border-radius: 0;
   border: 0px none;
   box-sizing: border-box;
-	width: 100%;
+  width: 100%;
   max-width: 100%;
 }
-.footer {
+.footer.footer {
   background: #2c2c2c;
   text-align: center;
   padding-top: 10px;
   padding-bottom: 10px;
 }
-.footer .footer__links {
+.footer .footer__links.footer__links {
   border: 0px none;
   padding: 0px;
+  margin: 0;
 }
 .footer .footer__link,
 .footer .footer__divider {
   color: #fff;
 }
-.footer .paragraph {
+.footer .paragraph.paragraph {
   font-size: 16px;
   line-height: 24px;
   color: #aaa;
