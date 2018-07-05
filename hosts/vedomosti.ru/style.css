@@ -69,7 +69,7 @@
   font-weight: 400;
 }
 
-.link {
+.link, .footer .link {
   color: #2e6f6f
 }
 
