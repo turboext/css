@@ -8,6 +8,7 @@ module.exports = {
         'unit-whitelist': ['px', '%', 'rem', 's', 'ms', 'deg', 'vw', 'vh'],
         'selector-max-specificity': '0,4,0',
         'selector-max-type': 0,
+        'selector-max-attribute': 0,
         'at-rule-blacklist': ['font-face', 'import'],
         'property-blacklist': [
             'filter',

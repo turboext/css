@@ -13,7 +13,6 @@ const { URL } = require('url');
 const chalk = require('chalk');
 const fs = require('fs');
 const path = require('path');
-const qs = require('querystring');
 const compression = require('compression');
 
 const removeCSP = require('./lib/server/remove-csp');
@@ -153,7 +152,7 @@ function normalize(str) {
         if (url.hostname === 'yandex.ru') {
             return url.searchParams.get('text') || '';
         } else {
-            return url;
+            return url.toString();
         }
     } catch (e) {
         return '';
@@ -175,13 +174,21 @@ function getTurbo(req, url, params) {
     const headers = { ...req.headers };
     delete headers.host;
 
-    const queryString = qs.stringify(params);
+    if (!url) {
+        return rp({
+            uri: 'https://yandex.ru/turbo',
+            headers,
+            gzip: true
+        }).then(removeCSP);
+    }
 
     return rp({
-        uri: url ?
-            `https://yandex.ru/turbo?text=${url}${queryString ? `&${queryString}` : '' }` :
-            'https://yandex.ru/turbo',
+        uri: 'https://yandex.ru/turbo',
         headers,
+        qs: {
+            text: url,
+            ...params
+        },
         gzip: true
     }).then(removeCSP);
 }
