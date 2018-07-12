@@ -1,0 +1,7 @@
+/* stylelint-disable-next-line */
+@import "../wikipedia.org/style";
+
+.page .header > .link {
+    background: transparent url('./wikipedia-wordmark-ru.svg') no-repeat 50%;
+    background-size: 126px 20px;
+}

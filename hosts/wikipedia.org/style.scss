@@ -1,0 +1,233 @@
+/* stylelint-disable */
+
+.infobox {
+    position: relative;
+    display: flex;
+    flex: 1 1 100%;
+    flex-flow: column nowrap;
+    margin-bottom: 20px;
+    width: 100% !important;
+    border: 1px solid #eaecf0;
+    background-color: #f8f9fa;
+    text-align: left;
+    font-size: 14px;
+    line-height: 23px;
+
+    div, span, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr,
+    acronym, address, big, cite, code, del, ins, em, img, small,
+    strike, strong, sub, sup, tt, b, u, i, center, dl, dt, dd, ol,
+    ul, li, fieldset, form, label, legend, input, textarea,
+    button, select, audio, video {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        background: none;
+        vertical-align: baseline;
+        font: inherit;
+        font-size: 100%;
+    }
+
+    > tbody {
+        display: block;
+    }
+
+    table td {
+        padding: initial;
+        width: initial;
+    }
+
+    > tbody > tr {
+        display: flex;
+        flex-flow: row nowrap;
+        min-width: 100%;
+    }
+
+    th,
+    td {
+        padding: 7px 10px;
+        border: 0;
+        vertical-align: top;
+    }
+
+    &.t-geoinfobox td:only-child,
+    &.t-geoinfobox th:only-child {
+        text-align: center
+    }
+
+    &.t-geoinfobox-nickname {
+        font-style: italic
+    }
+
+    &.t-geoinfobox-cave th:only-child,
+    &.t-geoinfobox-mount th:only-child {
+        background: #e7dcc3
+    }
+
+    &.t-geoinfobox-surface th:only-child {
+        background: #ffe4c4
+    }
+
+    &.t-geoinfobox-blue th:only-child,
+    &.t-geoinfobox-water th:only-child {
+        background: #c0daff
+    }
+
+    &.t-geoinfobox-underwater th:only-child {
+        background: #b0e0e6
+    }
+
+    &.t-geoinfobox-green th:only-child {
+        background: #d0f0c0
+    }
+
+    &.t-geoinfobox-yellow th:only-child {
+        background: #fdeaa8
+    }
+
+    &.t-geoinfobox-ny th:only-child {
+        background: #cbd5c4;
+        border: 1px solid #aaaaaa
+    }
+
+    &.t-geoinfobox-ny th:first-child:not(:only-child) {
+        background: #cbd5c4;
+        text-align: right;
+        padding: 0 0.5em
+    }
+
+    &.t-geoinfobox-grey th:only-child {
+        background: #dcdcdc
+    }
+
+    &.t-geoinfobox-crater th:only-child {
+        background: #fcafa7
+    }
+
+    &.t-geoinfobox td:only-child,
+    &.t-geoinfobox th:only-child {
+        text-align: center;
+    }
+
+    td:only-child,
+    th:only-child {
+        width: 100%;
+    }
+
+    tbody > tr > td,
+    tbody > tr > th {
+        flex: 1 0;
+    }
+
+    td p {
+        margin: 0 !important;
+    }
+
+    th > ul,
+    td > ul,
+    [data-wikidata-property-id] > ul {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+        list-style-image: none;
+    }
+
+    th > ol,
+    td > ol,
+    [data-wikidata-property-id] > ol {
+        margin: 0 0 0 2em;
+        line-height: 1.1em;
+    }
+
+    ul li:only-child {
+        list-style-type: none;
+    }
+
+    .hlist dd,
+    .hlist dt,
+    .hlist li {
+        display: inline;
+    }
+
+    .hlist dd:after,
+    .hlist li:after {
+        content: " · ";
+        font-weight: bold;
+    }
+
+    .hlist dd:last-child:after,
+    .hlist li:last-child:after {
+        content: "";
+    }
+
+    .NavHead small {
+        margin-bottom: 0 !important;
+    }
+
+    .center {
+        width: 100%;
+        text-align: center;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    a > img {
+        max-width: 100% !important;
+        height: auto !important;
+    }
+
+    caption {
+        text-align: left;
+        display: flex;
+        flex-flow: column nowrap;
+        font-weight: bold;
+    }
+
+    [class*=mw-customtoggle-] {
+        display: none;
+    }
+}
+
+table.infobox,
+.infobox table {
+    display: block;
+    overflow-x: auto;
+    overflow-y: hidden;
+    margin: 1em 0;
+    width: 100% !important;
+}
+
+a {
+    /* Чтобы ссылки не сливались на синем фоне.
+       Ставим одинаковый цвет ссылок на всей страницы. */
+    color: #04b;
+}
+
+/* Добавим заливку для шапки на всю ширину*/
+.cover:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 52px;
+    background-color: #eaecf0;
+}
+
+/* Разделитель больше не нужен  */
+.divider {
+    display: none;
+}
+
+/* Убираем текст *.wikipedia.org */
+.header_host .header-title {
+    text-indent: -1000px;
+    min-height: 28px;
+    padding-top: 0;
+}
+
+.page .header > .link {
+    position: relative;
+    z-index: 1;
+}
