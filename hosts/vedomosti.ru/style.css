@@ -4,7 +4,7 @@
 }
 
 .i {
-    font-family: HelveticaNeue,arial,sans-serif;
+  font-family: HelveticaNeue,arial,sans-serif;
 }
 
 .header_wide-logo .image {
@@ -17,15 +17,16 @@
 }
 
 .header.header_size_s .image {
+  margin: 0 auto;
   height: 32px;
 }
 
 .header__title-link {
-  text-align: center
+  text-align: center;
 }
 
 .title,
-.cover .title{
+.cover .title {
   font-family: "Helvetica Neue", Arial, sans-serif;
   font-size: 27px;
   font-weight: 400;
