@@ -17,6 +17,14 @@
     width: 100%;
 }
 
+.header-title {
+    text-indent: 64px; /* 72px (padding-right) - 8px (margin-left) */
+}
+
+.header__title-link {
+    text-decoration: none;
+}
+
 .cover__content > .divider {
     padding-top: 52px;
 }
