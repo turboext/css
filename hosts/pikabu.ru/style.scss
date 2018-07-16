@@ -139,13 +139,6 @@
     margin-top: 5px;
 }
 
-@media screen and (max-width: 480px) {
-    /* stylelint-disable-next-line */
-    .grid_wrap {
-        width: 100vw;
-    }
-}
-
 /* на маленьком разрешении сыпится заголовок */
 @media screen and (max-width: 310px) {
     /* stylelint-disable-next-line */
