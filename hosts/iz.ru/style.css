@@ -212,35 +212,6 @@
   color: #aaa;
   margin-bottom: 0px;
 }
-@media screen and (max-width: 359px) {
-  .footer {
-    margin-right: -14px;
-    margin-right: calc((100vw - 292px) / -2);
-    margin-left: -14px;
-    margin-left: calc((100vw - 292px) / -2);
-  }
-}
-@media screen and (max-width: 413px) and (min-width: 360px) {
-  .footer {
-    margin-right: -16px;
-    margin-right: calc((100vw - 328px) / -2);
-    margin-left: -16px;
-    margin-left: calc((100vw - 328px) / -2);
-  }
-}
-@media screen and (max-width: 479px) and (min-width: 414px) {
-  .footer {
-    margin-right: -15px;
-    margin-right: calc((100vw - 384px) / -2);
-    margin-left: -15px;
-    margin-left: calc((100vw - 384px) / -2);
-  }
-}
-@media screen and (min-width: 480px) {
-  .footer {
-    margin-right: -18px;
-    margin-right: calc((100vw - 444px) / -2);
-    margin-left: -18px;
-    margin-left: calc((100vw - 444px) / -2);
-  }
+.footer {
+  margin: 0 -14px;
 }

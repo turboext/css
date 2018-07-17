@@ -17,6 +17,7 @@
 }
 
 .header.header_size_s .image {
+  display: block;
   margin: 0 auto;
   height: 32px;
 }
