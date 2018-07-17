@@ -6,6 +6,8 @@ if (!process.env.LIVERELOAD) {
     process.env.LIVERELOAD = 'true';
 }
 
+process.env.NODE_TLS_REJECT_UNAUTHORIZED = 0;
+
 const express = require('express');
 const app = module.exports = express();
 const rp = require('request-promise');
@@ -49,7 +51,7 @@ app.use((req, res, next) => {
 
     req.ctx = req.ctx || {};
     req.ctx.url = url;
-    req.ctx.hostname = getHostname(url);
+    req.ctx.hostname = req.query.hostname || getHostname(url);
 
     next();
 });
@@ -155,7 +157,7 @@ function normalize(str) {
             return url.toString();
         }
     } catch (e) {
-        return '';
+        return str;
     }
 }
 
@@ -173,17 +175,18 @@ function cleanupParams(queryParams) {
 function getTurbo(req, url, params) {
     const headers = { ...req.headers };
     delete headers.host;
+    const turboHost = process.env.TURBO_HOST || 'https://yandex.ru';
 
     if (!url) {
         return rp({
-            uri: 'https://yandex.ru/turbo',
+            uri: `${turboHost}/turbo`,
             headers,
             gzip: true
         }).then(removeCSP);
     }
 
     return rp({
-        uri: 'https://yandex.ru/turbo',
+        uri: `${turboHost}/turbo`,
         headers,
         qs: {
             text: url,
