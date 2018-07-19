@@ -1,0 +1,59 @@
+/* Разделитель больше не нужен  */
+.divider {
+    display: none;
+}
+
+/* Убираем текст *.livejournal */
+.header_host .header-title {
+    text-indent: -1000px;
+    min-height: 28px;
+    padding-top: 0;
+}
+
+.page .header > .link {
+    position: relative;
+    z-index: 1;
+    background: transparent url('./logo.svg') no-repeat 0 50%;
+    background-size: 165px 30px;
+    text-align: left;
+}
+
+/* Добавим заливку для шапки на всю ширину*/
+.cover:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 52px;
+    background-color: #004359;
+}
+
+/* Цвет турбо-иконки */
+.header-turbo .header-turbo-icon {
+    fill: #fff;
+}
+
+/* Через CSS поменять цвет меню сложно, меняем иконку целиком */
+.sandwich-menu__handler {
+    background-image: url('menu.svg');
+}
+
+.header_host {
+    padding: 12px 0;
+}
+
+/* Иначе меню будет некликабельным */
+.header__aside {
+    z-index: 1;
+}
+
+.cover .title + .description {
+    font-size: 14px;
+    margin-top: 0;
+    color: #8C969B;
+}
+
+.cover + .unit {
+    margin-top: 10px;
+}
