@@ -1,3 +1,8 @@
+.cover {
+    /* Внутри cover есть блоки с position: absolute. Минимизируем риски */
+    position: relative;
+}
+
 .page {
     background-color: #e8e8e8;
 }
