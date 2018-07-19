@@ -2,10 +2,10 @@
   "name": "css",
   "version": "1.0.0",
   "description": "Turbo extensions",
-  "private": "true",
   "main": "index.js",
   "scripts": {
     "start": "node server.js",
+    "public": "PUBLIC=true node server",
     "test": "npm run lint && npm run unit && npm run build",
     "unit": "mocha",
     "lint": "npm run lint:style && npm run lint:hosts && npm run lint:size && npm run lint:js",

@@ -64,7 +64,7 @@ app.get('/turbo', (req, res, next) => {
 
     const params = cleanupParams(req.query);
 
-    if (!hostname) {
+    if (!hostname || req.query.disable) {
         return getTurbo(req, url, params).then(html => res.send(html)).catch(e => next(e));
     }
 
@@ -128,7 +128,10 @@ app.listen(DEV_SERVER_PORT, () => {
     if (PUBLIC) {
         const ngrok = require('ngrok');
 
-        ngrok.connect(DEV_SERVER_PORT).then(url => {
+        ngrok.connect({
+            addr: DEV_SERVER_PORT,
+            region: 'eu'
+        }).then(url => {
             console.log(`DevServer started at ${chalk.blue.underline(`${url}`)}`);
         }).catch(e => {
             console.error(e);
@@ -180,7 +183,12 @@ function cleanupParams(queryParams) {
     }
 
     const params = { ...queryParams };
+
     delete params.text;
+
+    // служебные параметры dev-server
+    delete params.disable;
+    delete params.hostname;
 
     return params;
 }
