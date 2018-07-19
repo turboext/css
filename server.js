@@ -91,6 +91,19 @@ app.get('/frame', (req, res, next) => {
     });
 });
 
+app.get('/frame-morda', (req, res, next) => {
+    fs.readFile('public/frame-morda.html', 'utf8', (e, html) => {
+        if (e) {
+            return next(e);
+        }
+
+        res.send(html.replace(
+            '/turbo?placeholder=1',
+            req.originalUrl.replace('/frame-morda', '/turbo')
+        ));
+    });
+});
+
 app.use((req, res) => {
     res.status(404);
     res.end('Unknown route');
