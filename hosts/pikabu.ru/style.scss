@@ -269,6 +269,8 @@
     &__avatar.grid.grid_square { /* stylelint-disable-line */
         height: 20px;
         width: 20px;
+        min-width: 20px;
+        flex-basis: 20px;
     }
 
     &__info {
