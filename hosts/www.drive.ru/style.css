@@ -18,7 +18,9 @@
 }
 
 .header-title {
-    text-indent: 64px; /* 72px (padding-right) - 8px (margin-left) */
+    /* явно задаем отступы чтобы центрировать лого */
+    padding-right: 80px;
+    padding-left: 72px; /* 80px - 8px (margin-left) */
 }
 
 .header__title-link {
