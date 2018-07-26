@@ -1,8 +1,10 @@
 const postcss = require('../lib/postcss');
 const glob = require('glob');
 const fs = require('fs');
-const files = glob.sync('./hosts/**/style.*').filter(file => !file.endsWith('min.css'));
 const async = require('async');
+const path = require('path');
+const files = findTargets(process.argv[2]);
+
 const queue = async.queue(async ({ from, to }, callback) => {
     process.stdout.write(`Minify ${from}...`);
 
@@ -19,9 +21,21 @@ const queue = async.queue(async ({ from, to }, callback) => {
     callback();
 }, 1);
 
-queue.drain = () => console.log('All items has been uploaded');
+queue.drain = () => console.log('All items has been minified');
 
 queue.push(files.map(from => {
     const to = from.replace(/\.s?css$/, '.min.css');
     return { from, to };
 }));
+
+function findTargets(where) {
+    if (where && where.endsWith('css')) {
+        return where;
+    }
+
+    const search = path.resolve(__dirname, '../hosts/**/*css');
+
+    return glob.sync(search)
+        .filter(file => where ? file.includes(where) : true)
+        .filter(file => file.endsWith('css') && !file.endsWith('min.css'));
+}
