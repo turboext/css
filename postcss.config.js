@@ -9,6 +9,7 @@ const plugins = [
     require('postcss-import')(),
     require('postcss-nested'),
     require('postcss-url')({ url: 'inline' }),
+    require('postcss-calc')(),
     require('autoprefixer')({ browsers }),
     require('postcss-reporter')()
 ];
