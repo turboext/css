@@ -57,3 +57,8 @@
 .cover + .unit {
     margin-top: 10px;
 }
+
+/* Уберём шапку из релеватных публикаций */
+.autoload__content .cover .header {
+    display: none;
+}
