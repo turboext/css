@@ -21,7 +21,9 @@ const queue = async.queue(async ({ from, to }, callback) => {
     callback();
 }, 1);
 
-queue.drain = () => console.log('All items has been minified');
+if (files.length !== 1) {
+    queue.drain = () => console.log('All items has been minified');
+}
 
 queue.push(files.map(from => {
     const to = from.replace(/\.s?css$/, '.min.css');
@@ -33,7 +35,13 @@ function findTargets(where) {
         return where;
     }
 
-    const search = path.resolve(__dirname, '../hosts/**/*css');
+    let search;
+
+    if (where) {
+        search = path.join(where, '*css');
+    } else {
+        search = path.resolve(__dirname, '../hosts/**/*css');
+    }
 
     return glob.sync(search)
         .filter(file => where ? file.includes(where) : true)
