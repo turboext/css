@@ -196,6 +196,9 @@ function cleanupParams(queryParams) {
 function getTurbo(req, url, params) {
     const headers = { ...req.headers };
     delete headers.host;
+    // выключаем поддержку brotli
+    headers['accept-encoding'] = 'gzip, deflate';
+    
     const turboHost = process.env.TURBO_HOST || 'https://yandex.ru';
 
     if (!url) {
