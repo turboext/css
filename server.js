@@ -69,7 +69,11 @@ app.get('/turbo', (req, res, next) => {
     }
 
     if (params.ajax_type) {
-        return getTurbo(req, url, params).then(html => res.send(html)).catch(e => next(e));
+        return getTurbo(req, url, params).then(json => {
+            res.set('Content-Type', 'application/json; charset=utf-8');
+            res.send(json);
+            return res.end();
+        }).catch(e => next(e));
     }
 
     getTurbo(req, url, params)
@@ -198,7 +202,7 @@ function getTurbo(req, url, params) {
     delete headers.host;
     // выключаем поддержку brotli
     headers['accept-encoding'] = 'gzip, deflate';
-    
+
     const turboHost = process.env.TURBO_HOST || 'https://yandex.ru';
 
     if (!url) {
