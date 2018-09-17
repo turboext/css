@@ -1,0 +1,92 @@
+.cover .title {
+    margin: 0;
+    font-size: 30px;
+    line-height: 32px;
+    color: #222;
+}
+
+.page .cover .description {
+    font-size: 11px;
+    text-transform: uppercase;
+    color: #222;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-top: 12px;
+    line-height: 15px;
+}
+
+.paragraph {
+    margin: 0;
+    font-family: Georgia, serif;
+    font-size: 17px;
+    color: #333;
+    letter-spacing: 0.4px;
+    line-height: 24px;
+}
+
+.link {
+    background: linear-gradient(to bottom,rgba(0,0,0,0) 0,#16b67f 100%);
+    background-repeat: repeat-x;
+    background-position: 0 100%;
+    background-size: 1px 1px;
+    color: #333;
+    text-decoration: none;
+}
+
+.footer__link {
+    color:  #9B9B9B;
+    background: 0;
+    font-family: HelveticaNeue,arial,sans-serif;
+    font-size: 15px;
+}
+
+.footer__divider {
+    color:  #9B9B9B;
+    background: 0;
+    font-family: HelveticaNeue,arial,sans-serif;
+    font-size: 15px;
+}
+
+.footer_view_inline .footer__links {
+    border: none;
+}
+
+.autoload__divider {
+    height: 0;
+}
+
+.cover .divider {
+    border: none;
+}
+
+.header {
+    position: relative;
+    background-color: #222;
+    margin-left: -14px;
+    margin-right: -14px;
+}
+
+.header .link {
+    background: 0;
+    margin-left: 14px;
+}
+
+.header__aside {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-right: 14px;
+}
+
+.header.header_size_s .image {
+    height: 21px;
+    background-image: url('images/rbc_mob.svg') !important;
+}
+
+.cover .divider+.title {
+    margin-top: 28px;
+}
+
+.unit+.footer {
+    margin-top: 40px;
+}
