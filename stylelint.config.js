@@ -11,7 +11,6 @@ module.exports = {
         'selector-max-attribute': 0,
         'at-rule-blacklist': ['font-face', 'import'],
         'property-blacklist': [
-            'filter',
             'perspective',
             'backface-visibility',
             'mask',

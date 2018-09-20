@@ -17,6 +17,16 @@
     width: 100%;
 }
 
+.header-title {
+    /* явно задаем отступы чтобы центрировать лого */
+    padding-right: 80px;
+    padding-left: 72px; /* 80px - 8px (margin-left) */
+}
+
+.header__title-link {
+    text-decoration: none;
+}
+
 .cover__content > .divider {
     padding-top: 52px;
 }

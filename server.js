@@ -6,6 +6,8 @@ if (!process.env.LIVERELOAD) {
     process.env.LIVERELOAD = 'true';
 }
 
+process.env.NODE_TLS_REJECT_UNAUTHORIZED = 0;
+
 const express = require('express');
 const app = module.exports = express();
 const rp = require('request-promise');
@@ -49,7 +51,7 @@ app.use((req, res, next) => {
 
     req.ctx = req.ctx || {};
     req.ctx.url = url;
-    req.ctx.hostname = getHostname(url);
+    req.ctx.hostname = req.query.hostname || getHostname(url);
 
     next();
 });
@@ -62,12 +64,16 @@ app.get('/turbo', (req, res, next) => {
 
     const params = cleanupParams(req.query);
 
-    if (!hostname) {
+    if (!hostname || req.query.disable) {
         return getTurbo(req, url, params).then(html => res.send(html)).catch(e => next(e));
     }
 
     if (params.ajax_type) {
-        return getTurbo(req, url, params).then(html => res.send(html)).catch(e => next(e));
+        return getTurbo(req, url, params).then(json => {
+            res.set('Content-Type', 'application/json; charset=utf-8');
+            res.send(json);
+            return res.end();
+        }).catch(e => next(e));
     }
 
     getTurbo(req, url, params)
@@ -85,6 +91,19 @@ app.get('/frame', (req, res, next) => {
         res.send(html.replace(
             '/turbo?placeholder=1',
             req.originalUrl.replace('/frame', '/turbo')
+        ));
+    });
+});
+
+app.get('/frame-morda', (req, res, next) => {
+    fs.readFile('public/frame-morda.html', 'utf8', (e, html) => {
+        if (e) {
+            return next(e);
+        }
+
+        res.send(html.replace(
+            '/turbo?placeholder=1',
+            req.originalUrl.replace('/frame-morda', '/turbo')
         ));
     });
 });
@@ -113,7 +132,10 @@ app.listen(DEV_SERVER_PORT, () => {
     if (PUBLIC) {
         const ngrok = require('ngrok');
 
-        ngrok.connect(DEV_SERVER_PORT).then(url => {
+        ngrok.connect({
+            addr: DEV_SERVER_PORT,
+            region: 'eu'
+        }).then(url => {
             console.log(`DevServer started at ${chalk.blue.underline(`${url}`)}`);
         }).catch(e => {
             console.error(e);
@@ -155,7 +177,7 @@ function normalize(str) {
             return url.toString();
         }
     } catch (e) {
-        return '';
+        return str;
     }
 }
 
@@ -165,7 +187,12 @@ function cleanupParams(queryParams) {
     }
 
     const params = { ...queryParams };
+
     delete params.text;
+
+    // служебные параметры dev-server
+    delete params.disable;
+    delete params.hostname;
 
     return params;
 }
@@ -173,17 +200,21 @@ function cleanupParams(queryParams) {
 function getTurbo(req, url, params) {
     const headers = { ...req.headers };
     delete headers.host;
+    // выключаем поддержку brotli
+    headers['accept-encoding'] = 'gzip, deflate';
+
+    const turboHost = process.env.TURBO_HOST || 'https://yandex.ru';
 
     if (!url) {
         return rp({
-            uri: 'https://yandex.ru/turbo',
+            uri: `${turboHost}/turbo`,
             headers,
             gzip: true
         }).then(removeCSP);
     }
 
     return rp({
-        uri: 'https://yandex.ru/turbo',
+        uri: `${turboHost}/turbo`,
         headers,
         qs: {
             text: url,
