@@ -64,11 +64,12 @@ $size--avatar: 20px;
 }
 
 .image {
-    /* Уберём отсупы у изображений */
+    /* Уберём отступы у изображений */
     &_type_edge {
         max-width: inherit;
         margin-left: -14px;
         margin-right: -14px;
+        max-height: inherit !important;
     }
     /* Отступы между изображениями 5px */
     & + & {
@@ -81,13 +82,13 @@ $size--avatar: 20px;
         line-height: 22px;
         color: $color--text;
     }
-    /* Отсуп от параграфа до изображения */
+    /* Отступ от параграфа до изображения */
     & + .image {
         margin-top: 10px;
     }
 }
 
-/* Отсуп от изображения до параграфа */
+/* Отступ от изображения до параграфа */
 .image + .paragraph {
     margin-top: 15px;
 }
@@ -267,7 +268,7 @@ $size--avatar: 20px;
         margin-bottom: 5px;
     }
 
-    /* Для развёртнутого комментария добавим анологичные отступы, как и для параграфа */
+    /* Для развёрнутого комментария добавим отступы параграфа */
     .fold__hidden {
         &:before, &:after {
             display: block;
