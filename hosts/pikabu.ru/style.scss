@@ -1,49 +1,43 @@
+$color--green: #83b65b;
+$color--text: #454648;
+$size--space_between: 20px;
+
+$size--title: 20px;
+$size--body-1: 16px;
+$size--body-0: 14px;
+$size--caption: 13px;
+
+$size--avatar: 20px;
+
 /* ---------------------------------------------------------------------------------------------------------------------
  * Основное
  * - Перекрасить в фирменные цвета: основной текст `#454648`, ссылки `#83b65b`, цитаты, кнопки
  * - Отступы между основными элементами `20px`
- * - Растянуть изображения на всю ширину экрана
+ * - Растянуть изображения на всю ширину .page
+ * - Изменить семейство шрифтов на фирменные
  * - Отступы от текста до изображения `10px`, от изображения до текста `15px`, между изображениями `5px`
  * - Отцентровать ссылки в подвале и уменьшить размер ссылок до `14px`
  * ---------------------------------------------------------------------------------------------------------------------
  */
+
 .link.link {
-    color: #83b65b;
+    color: $color--green;
 }
 
 .page {
     overflow-x: hidden;
-    color: #454648;
+    color: $color--text;
+    .source {
+        margin-top: $size--space_between;
+    }
 }
 
+/* Шрифт */
 .page,
-.button {
+.button,
+.b,
+.i {
     font-family: Roboto, "Open Sans", -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif;
-}
-
-.footer {
-    font-size: 14px;
-    text-align: center;
-}
-
-/* stylelint-disable-next-line */
-.page__unit + .page__unit,
-.unit_rect + .unit_rect,
-.unit_text_m + .unit_rect,
-.unit_rect + .unit_text_m {
-    margin-top: 20px;
-}
-
-/* stylelint-disable-next-line */
-.page__unit + .footer,
-.unit + .footer {
-    margin-top: 20px;
-}
-
-/* stylelint-disable-next-line */
-.cover + .page__unit,
-.cover + .unit {
-    margin-top: 12px;
 }
 
 .button {
@@ -54,7 +48,7 @@
 
 .author {
     font-weight: bold;
-    color: #83b65b;
+    color: $color--green;
 }
 
 .blockquote.blockquote {
@@ -65,85 +59,45 @@
     background: #faf9f4;
 }
 
-/* Шрифт */
-/* stylelint-disable-next-line */
-.typo {
-    &_regular, &_bold, &_italic {
-        font-family: Roboto, "Open Sans", -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif;
-    }
-}
-
 .cover .title {
-    font-size: 20px;
+    font-size: $size--title;
 }
 
-.paragraph.paragraph {
-    line-height: 22px;
-    color: #454648;
-}
-
-/* Развернём изображение на весь экран */
-.image_type_block {
-    max-width: inherit;
-    max-height: 100% !important; /* переопределение inline стилей */
-
-    @media screen and (max-width: 359px) {
-        margin-right: -14px;
+.image {
+    /* Уберём отступы у изображений */
+    &_type_edge {
+        max-width: inherit;
         margin-left: -14px;
+        margin-right: -14px;
+        max-height: inherit !important;
     }
-
-    @media screen and (max-width: 413px) and (min-width: 360px) {
-        margin-right: -16px;
-        margin-left: -16px;
-    }
-
-    @media screen and (max-width: 479px) and (min-width: 414px) {
-        margin-right: -15px;
-        margin-left: -15px;
-    }
-
-    @media screen and (min-width: 480px) {
-        margin-right: -18px;
-        margin-left: -18px;
-    }
-
-    @media screen and (max-width: 480px) {
-        width: 101vw !important; /* переопределение inline стилей */
-        background-size: cover !important; /* переопределение inline стилей */
-    }
-
-    .image__img {
-        width: 100%;
-        height: 100%;
-    }
-
-    /* @see https://yadi.sk/i/itZSt0-Z3Vx7X9 */
-    &.image_caption_off {
-        background-position: center;
+    /* Отступы между изображениями 5px */
+    & + & {
+        margin-top: 5px;
     }
 }
 
-/* stylelint-disable-next-line */
-.markup__unit + .image,
-.unit + .image {
-    margin-top: 10px;
+.paragraph {
+    .paragraph {
+        line-height: 22px;
+        color: $color--text;
+    }
+    /* Отступ от параграфа до изображения */
+    & + .image {
+        margin-top: 10px;
+    }
 }
 
-/* stylelint-disable-next-line */
-.image + .markup__unit,
-.image + .unit {
+/* Отступ от изображения до параграфа */
+.image + .paragraph {
     margin-top: 15px;
 }
 
-.image + .image {
-    margin-top: 5px;
-}
-
-/* на маленьком разрешении сыпится заголовок */
-@media screen and (max-width: 310px) {
-    /* stylelint-disable-next-line */
-    .grid_unwrap {
-        margin: 0 -14px;
+.footer {
+    font-size: $size--body-0;
+    text-align: center;
+    && {
+        margin-top: $size--space_between;
     }
 }
 
@@ -153,11 +107,15 @@
  * - Зелёная подложка на всю ширину
  * - Временно заменим логотип кекса для экранов с DPR > 1. Удалить, как только Turbo будут отдавать 2x logo 😄
  * - Текст "Пикабу" в logo заменим SVG
- * - Иконку Турбо перекрасим в белый, а сэндвич в #454648
+ * - Иконки перекрасим в белый
  * ---------------------------------------------------------------------------------------------------------------------
  */
 .cover {
     position: relative;
+
+    & + .paragraph {
+        margin-top: 10px;
+    }
 
     /* Добавим заливку для шапки на всю ширину*/
     &:before {
@@ -243,12 +201,14 @@
  * - Выравнить аватрки с именем пользователя на одну прямую
  * - Добавить разделитель c подписью "Популярные комментарии" между текстом публикации и комментариями
  * - Изменили размер аватарок до `20px 20px`
+ * - Изменить размер: текста комментария 15px
  * ---------------------------------------------------------------------------------------------------------------------
  */
 .comments {
-    &, .paragraph {
+    && {
         font-size: 15px;
         line-height: 18px;
+        margin-top: $size--space_between;
     }
 
     &:before {
@@ -257,39 +217,38 @@
         margin-bottom: 15px;
         padding-bottom: 10px;
         font-weight: 700;
-        font-size: 16px;
+        font-size: $size--body-1;
         width: 100%;
         border-bottom: 1px solid #eff2ec;
     }
 
-    &__author {
+    &__author, &__info {
         display: flex;
     }
 
-    &__avatar.grid.grid_square { /* stylelint-disable-line */
-        height: 20px;
-        width: 20px;
-        min-width: 20px;
-        flex-basis: 20px;
+    /* Отступ от автора комментария до текста*/
+    &__author + &__comment-text {
+        margin-top: 2px;
     }
 
-    &__info {
-        display: flex;
-
-        .typo_text_m.typo_line_m { /* stylelint-disable-line */
-            line-height: 20px;
-        }
+    &__avatar&__avatar&__avatar {
+        height: $size--avatar;
+        width: $size--avatar;
+        min-width: $size--avatar;
+        flex-basis: $size--avatar;
     }
 
-    &__title {
-        font-size: 14px;
+    &__title&__title {
+        font-size: $size--body-0;
         color: #777;
+        line-height: $size--avatar;
     }
 
-    &__subtitle {
+    &__subtitle&__subtitle {
         margin-left: 5px;
-        font-size: 14px;
+        font-size: $size--body-0;
         color: #a6aca1;
+        line-height: $size--avatar;
     }
 
     &__title, &__title + &__subtitle {
@@ -300,26 +259,26 @@
     }
 
     &__comment + &__comment {
-        margin-top: 20px;
+        margin-top: $size--space_between;
         padding-top: 0;
         border-top: 0;
     }
 
-    &__comment-text {
-        margin-top: 2px;
+    .blockquote {
+        margin-bottom: 5px;
+    }
 
-        .paragraph {
-            margin: 0;
-            color: #454648;
-        }
-
-        .blockquote {
-            margin-bottom: 5px;
+    /* Для развёрнутого комментария добавим отступы параграфа */
+    .fold__hidden {
+        &:before, &:after {
+            display: block;
+            height: 2px;
+            content: "";
         }
     }
 
     .button {
-        color: #454648;
+        color: $color--text;
         background-color: #eff2ec;
     }
 }
