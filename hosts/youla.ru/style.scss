@@ -1,0 +1,545 @@
+.page {
+    -webkit-font-smoothing: antialiased;
+    color: #393939;
+}
+
+.unit_text_m {
+    font-size: 14px;
+    letter-spacing: 0.2px;
+}
+
+.youla-center {
+    color: gray;
+}
+
+.header.header_host,
+.modal__title,
+.youla-center {
+    text-align: center;
+}
+
+.footer_view_default,
+.source {
+    display: none;
+}
+
+.button {
+    height: 40px;
+}
+
+.button_size_m .button__label {
+    line-height: 38px;
+}
+
+.link.header__title-link {
+    width: 92px;
+    height: 35px;
+}
+
+.cover .divider,
+.rating__notice,
+.slider__dots {
+    display: none;
+}
+
+.header__aside {
+    position: static;
+}
+
+.header-turbo {
+    position: absolute;
+    top: 16px;
+    right: 0;
+    left: auto;
+}
+
+.header_host {
+    padding: 9px 0 6px;
+}
+
+.sandwich-menu.sandwich-menu {
+    position: absolute;
+    top: 2px;
+    left: -4px;
+    margin: 0;
+}
+
+.accordion {
+    margin-top: 6px;
+    margin-bottom: 22px;
+}
+
+.accordion__title.accordion__title:after {
+    margin-top: -12px;
+    right: 1px;
+    width: 160px;
+    background: 0 0;
+    letter-spacing: 0.2px;
+    color: #039ad3;
+    content: "Показать на карте ↓";
+    text-align: right;
+    -webkit-transform: none;
+    -ms-transform: none;
+    font-size: 14px;
+    transform: none;
+}
+
+.accordion__title {
+    color: #393939;
+    font-weight: 400;
+    font-size: 14px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.accordion__item_expanded .accordion__title:after {
+    content: "Скрыть";
+}
+
+.divider + .paragraph {
+    margin-top: 22px;
+}
+
+.divider.divider {
+    margin-top: 17px;
+}
+
+.paragraph + .divider {
+    margin-top: 21px;
+}
+
+.divider + .table {
+    margin-top: 18px;
+}
+
+.button + .divider {
+    margin-top: 30px;
+}
+
+.divider.divider:last-child {
+    margin-top: 50px;
+    margin-right: 50px;
+}
+
+.divider.youla-footer-divider {
+    margin-top: 64px;
+}
+
+.divider + .cover__title,
+.header-title,
+.title,
+.youla-report + .divider {
+    display: none;
+}
+
+.youla-report + .divider + .youla-center {
+    margin-top: 46px;
+}
+
+.image_mini {
+    width: 40px !important;
+    height: 40px;
+}
+
+.rating.rating.rating {
+    margin-top: 0;
+}
+
+.rating__star {
+    fill: #ddd;
+}
+
+.rating__star_full {
+    fill: #ffaf16;
+}
+
+.rating__star + .rating__star {
+    margin-left: 8px;
+}
+
+.rating__notice.rating__notice {
+    display: none;
+}
+
+.table__cell {
+    color: gray;
+    font-size: 14px;
+    width: 50%;
+    letter-spacing: 0.2px;
+}
+
+.table__cell + .table__cell {
+    color: #393939;
+    padding-left: 0;
+}
+
+.table__row + .table__row > .table__cell {
+    padding-top: 8px;
+}
+
+.slider__img-item {
+    max-width: unset !important;
+    max-height: unset !important;
+}
+
+.slider__count {
+    top: auto;
+    right: auto;
+    bottom: 10px;
+    left: 10px;
+    padding: 0 10px 0 6px;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.slider__count:before {
+    display: inline-block;
+    margin: -3px 8px 0 1px;
+    width: 13px;
+    height: 13px;
+    background-image: url(slider__count.svg);
+    background-position: 50%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    content: "";
+    vertical-align: middle;
+}
+
+.share.share {
+    margin-top: 16px;
+}
+
+.share__services {
+    width: 200px;
+    margin: 0 auto;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+}
+
+.share__item-wrapper {
+    width: auto;
+    padding-left: 0;
+    display: block;
+}
+
+.share__item-wrapper .button {
+    padding: 0;
+    width: 32px;
+    height: 32px;
+    border-radius: 20px;
+}
+
+.share__item-wrapper .button .icon {
+    width: 20px;
+}
+
+.share__item-wrapper_hidden {
+    display: inline-block;
+}
+
+.button.share__copy,
+.header__title-link .image,
+.share__item-wrapper:last-child,
+.share__item-wrapper_more {
+    display: none;
+}
+
+.header,
+.youla-no-item {
+    text-align: center;
+}
+
+.header__title-link {
+    display: inline-block;
+    width: 93px;
+    height: 32px;
+    background-image: url(header__title-link.svg);
+    background-position: 50%;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.snippet .image-simple_ratio_16x9:after {
+    padding: 100% 0 0;
+}
+
+.snippet .image-simple_ratio_16x9 {
+    border-radius: 4px;
+}
+
+.snippet__content.snippet__content {
+    margin: 12px 0;
+}
+
+.snippet__title {
+    font-weight: 500;
+}
+
+.snippet__text {
+    color: #8f8f8f;
+    font-size: 14px;
+}
+
+.snippet__title-link {
+    font-family: Fira Sans, -apple-system, Open Sans, Helvetica Neue, sans-serif;
+    line-height: 18px;
+
+    color: #393939;
+}
+
+.slider.slider {
+    margin: 0 -14px;
+    overflow: hidden;
+}
+
+.youla-circle-image {
+    display: block;
+    overflow: hidden;
+    max-width: 100%;
+    border-radius: 100px;
+}
+
+.youla-hidden {
+    display: none !important;
+}
+
+.youla-visible.youla-visible {
+    display: block;
+}
+
+.youla-no-item {
+    display: none;
+    line-height: 44px;
+}
+
+.youla-seller {
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.youla-copyright.youla-copyright,
+.youla-product.youla-product {
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.youla-description.youla-description {
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.youla-padder.youla-padder {
+    margin-top: 80px;
+}
+
+.youla-price {
+    margin-top: 18px;
+    font-size: 24px;
+}
+
+.youla-title.youla-title {
+    margin-top: 1px;
+    margin-bottom: 13px;
+    font-size: 20px;
+    line-height: 32px;
+}
+
+.youla-badges .unit_text_m {
+    color: #393939;
+    line-height: 24px;
+}
+
+.youla-report.youla-report {
+    margin-top: 40px;
+    height: 40px;
+    border: 1px solid #f75059;
+    background: 0 0;
+    color: #f75059;
+}
+
+.youla-report .button__label {
+    line-height: 38px;
+}
+
+.youla-icon {
+    width: 24px;
+    height: 24px;
+}
+
+.youla-icon-android,
+.youla-icon-ios {
+    display: block;
+    padding-left: 35px;
+    width: auto;
+    height: unset;
+    min-height: 27px;
+    background-position-x: left;
+    background-repeat: no-repeat;
+    background-size: 27px;
+    color: gray;
+    white-space: normal;
+    font-size: 14px;
+}
+
+.youla-icon-car {
+    background-image: url(youla-icon-car.svg);
+}
+
+.youla-icon-safe {
+    background-image: url(youla-icon-safe.svg);
+}
+
+.youla-icon-android {
+    background-image: url(youla-icon-android.svg);
+}
+
+.youla-icon-ios {
+    background-image: url(youla-icon-ios.svg);
+}
+
+.youla-badges {
+    margin-top: 23px;
+    color: #8f8f8f;
+}
+
+.youla-badges + .youla-badges {
+    margin-top: 12px;
+}
+
+.youla-badges + .divider {
+    margin-top: 20px;
+}
+
+.youla-badges .youla-icon {
+    -webkit-box-flex: 0;
+    flex: 0 0 auto;
+    margin-top: 2px;
+    width: 24px;
+    height: 24px;
+}
+
+.youla-badges_disabled .youla-icon {
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+}
+
+.youla-small-text {
+    font-size: 12px;
+    line-height: 20px;
+}
+
+.youla-fixed-buy {
+    overflow: hidden;
+}
+
+.youla-fixed {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background: rgba(57, 57, 57, 0.92);
+    color: #fff;
+}
+
+.youla-fixed .exp-external-request {
+    height: 44px;
+}
+
+.youla-fixed .youla-title {
+    font-size: 20px;
+    line-height: 20px;
+    margin: 0;
+}
+
+.youla-fixed .paragraph {
+    margin: 0;
+    color: #fff;
+}
+
+.youla-fixed .paragraph:after,
+.youla-fixed .paragraph:before {
+    height: 0;
+}
+
+.youla-fixed .youla-price {
+    font-size: 20px;
+    line-height: 24px;
+}
+
+.youla-fixed .youla-icon.youla-icon-safe {
+    margin-right: 8px;
+}
+
+.youla-fixed .exp-data-bind {
+    display: block;
+}
+
+.youla-related {
+    margin-top: 16px;
+}
+
+.youla-related .snippet {
+    margin-bottom: 16px;
+}
+
+.youla-related-title,
+.youla-share-title {
+    color: #8f8f8f;
+    text-align: center;
+}
+
+.youla-related-title.youla-related-title {
+    margin-top: 48px;
+    margin-bottom: 16px;
+}
+
+.youla-circle-image.image_type_inline {
+    background-size: cover;
+    background-position: 50%;
+}
+
+.youla-circle-image.image_type_inline .image__ratio {
+    padding: 100% 0 0 !important;
+}
+
+.youla-user-badge .link {
+    color: #393939;
+}
+
+.youla-footer {
+    margin-top: 16px;
+    margin-bottom: 0;
+}
+
+.youla-footer .link {
+    display: block;
+    color: gray;
+    font-size: 14px;
+}
+
+.youla-footer .paragraph {
+    margin-top: 10px;
+    line-height: 16px;
+}
+
+.youla-footer .paragraph:first-of-type {
+    margin-bottom: 10px;
+}
+
+.youla-footer .unit.paragraph {
+    margin-top: 0;
+}
+
+.youla-apps {
+    margin-top: 8px;
+    margin-bottom: 80px;
+}
+
+.youla-apps .image-simple {
+    width: 27px;
+}
+
+.youla-apps.youla-apps .paragraph {
+    font-size: 16px;
+    line-height: 24px;
+}
