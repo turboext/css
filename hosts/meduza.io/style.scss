@@ -14,6 +14,17 @@
     padding-top: 0;
 }
 
+/* Фирменный цвет ссылок, но не в подвале */
+.paragraph .link {
+    text-decoration: none;
+    color: inherit;
+    box-shadow: inset 0 -1px #b88b58;
+}
+
+.footer .link {
+    box-shadow: inherit;
+}
+
 .page .header > .link {
     position: relative;
     z-index: 1;
@@ -97,15 +108,6 @@
 
 .paragraph {
     font-family: Georgia,serif;
-}
-.paragraph .link {
-    text-decoration: none;
-    color: inherit;
-    box-shadow: inset 0 -1px #b88b58;
-}
-
-.footer .link {
-    box-shadow: inherit;
 }
 
 .footer .paragraph {
