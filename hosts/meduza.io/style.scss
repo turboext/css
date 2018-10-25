@@ -1,0 +1,132 @@
+.page {
+    font-family: Arial,Helvetica Neue,sans-serif;
+}
+
+/* Разделитель больше не нужен  */
+.divider {
+    display: none;
+}
+
+/* Убираем текст *.meduza */
+.header .header-title {
+    text-indent: -1000px;
+    min-height: 28px;
+    padding-top: 0;
+}
+
+.page .header > .link {
+    position: relative;
+    z-index: 1;
+    background: transparent url('./logo.svg') no-repeat 50% 50%;
+    background-size: 100px 21px;
+    text-align: center;
+    fill: #b88b58;
+}
+
+.header .image_type_logo {
+    display: none;
+}
+
+/* Добавим заливку для шапки на всю ширину*/
+.cover:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 52px;
+    background-color: #262626;
+}
+
+/* Цвет турбо-иконки */
+.header-turbo .header-turbo-icon {
+    fill: #fff;
+}
+
+/* Через CSS поменять цвет меню сложно, меняем иконку целиком */
+.sandwich-menu__handler {
+    background-image: url('menu.svg');
+}
+
+.header_host {
+    padding: 12px 0;
+}
+
+/* Иначе меню будет некликабельным */
+.header__aside {
+    position: static;
+}
+
+.header-turbo.header__aside-item {
+    position: absolute;
+    left: 0;
+    top: 14px;
+}
+
+.sandwich-menu.header__aside-item {
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 1;
+}
+
+.cover .title {
+    font-family: Georgia,serif;
+    font-size: 25px;
+    line-height: 27px;
+    font-weight: 400;
+}
+
+.cover .title + .description {
+    font-size: 12px;
+    line-height: 14px;
+    margin-top: 12px;
+    color: gray;
+}
+
+.cover .description .date {
+    display: inline-block;
+    padding-left: 16px;
+    background: url('./clock.svg') no-repeat 0 0;
+    background-size: 12px 14px;
+}
+
+.cover + .unit {
+    margin-top: 10px;
+}
+
+.paragraph {
+    font-family: Georgia,serif;
+}
+.paragraph .link {
+    text-decoration: none;
+    color: inherit;
+    box-shadow: inset 0 -1px #b88b58;
+}
+
+.footer .link {
+    box-shadow: inherit;
+}
+
+.footer .paragraph {
+    font-family: inherit;
+}
+
+.footer__about {
+    padding-top: 16px;
+    padding-bottom: 16px;
+}
+.footer_view_default {
+    padding-bottom: 16px;
+}
+
+.button_theme_default {
+    background-color: #b88b58;
+    text-shadow: 0 1px 1px rgba(0,0,0,.3);
+    color: #fff;
+}
+
+/* Уберём шапку из релеватных публикаций */
+.autoload__content .cover .header {
+    display: none;
+}
