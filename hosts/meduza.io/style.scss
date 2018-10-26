@@ -129,6 +129,7 @@
 }
 
 /* Уберём шапку из релеватных публикаций */
+.autoload__content .cover:before,
 .autoload__content .cover .header {
     display: none;
 }
