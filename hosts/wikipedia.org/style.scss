@@ -251,3 +251,6 @@ a {
     fill: #666;
 }
 
+.page[data-customcss-gte~="3"] .header-turbo .header-turbo-icon {
+    fill: #999;
+}
