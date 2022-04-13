@@ -29,7 +29,7 @@
   },
   "homepage": "https://github.com/turboext/css#readme",
   "dependencies": {
-    "async": "^2.6.1",
+    "async": "^3.2.2",
     "autoprefixer": "8.3.0",
     "chalk": "2.4.1",
     "compression": "1.7.2",
